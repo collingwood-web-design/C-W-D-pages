@@ -809,10 +809,9 @@ ul {
 }
 
 .ticker-item .maple {
-  width: 1.05rem;
-  height: 1.35rem;
-  color: #fff;
-  fill: #fff;
+  width: 1.15rem;
+  height: 1.2rem;
+  object-fit: contain;
   flex-shrink: 0;
   display: block;
 }
@@ -1438,11 +1437,12 @@ ul {
   gap: 0.35rem;
 }
 
-.maple-inline svg {
-  width: 0.8rem;
-  height: 1.05rem;
-  color: var(--red);
-  fill: currentColor;
+.maple-inline-img {
+  width: 0.95rem;
+  height: 1rem;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: -0.1em;
 }
 
 .social-icons {
