@@ -10,10 +10,10 @@
   <meta property="og:description" content="Websites designed to be found, remembered &amp; loved.">
   <meta property="og:url" content="https://www.collingwoodwebdesign.com/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://media.cwd-cdn.com/C-W-D/images/hero.jpg">
+  <meta property="og:image" content="https://media.cwd-cdn.com/C-W-D/images/hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600&family=Lato:wght@400;700;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="header-inner">
       <a class="logo" href="./" aria-label="Collingwood Web Design home">
         <span class="logo-strong">COLLINGWOOD</span>
-        <span class="logo-accent">webdesign</span>
+        <span class="logo-rest"><span class="logo-web">web</span><span class="logo-design">design</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
         <span></span>
@@ -31,7 +31,7 @@
           <li><a href="./" aria-current="page">Home</a></li>
           <li><a href="web-design">Web Design</a></li>
           <li><a href="graphics">Graphics</a></li>
-          <li><a href="testimonials">Testimonials</a></li>
+          <li><a href="seo">SEO / AEO</a></li>
           <li><a href="about">About</a></li>
           <li><a href="contact">Contact</a></li>
         </ul>
@@ -42,18 +42,40 @@
   <main>
     <section class="hero" aria-label="Hero">
       <div class="hero-media">
-        <img src="https://media.cwd-cdn.com/C-W-D/images/hero.jpg" alt="" width="1920" height="1080" fetchpriority="high">
-      </div>
-      <div class="canada-badge" aria-hidden="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.2 3.4h3.6l-2.9 2.1 1.1 3.5L12 9.8 8.9 11l1.1-3.5L7.1 5.4h3.6L12 2zm0 10.2l.7 2 2.1.1-1.6 1.3.5 2.1L12 14.7l-1.7 1 .5-2.1-1.6-1.3 2.1-.1.7-2z"/></svg>
-        <span>made in Canada</span>
+        <img
+          src="https://media.cwd-cdn.com/C-W-D/images/hero.png"
+          alt="Laptop keyboard with red backlighting"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        >
       </div>
       <div class="hero-inner">
-        <h1 class="hero-brand">COLLINGWOOD<span class="web">webdesign</span></h1>
-        <p class="hero-sub">Websites designed to be found, remembered <em>&amp;</em> loved.</p>
-        <p class="hero-tags">Web Design · Development · SEO / AEO · Graphic Design</p>
+        <img
+          class="canada-badge"
+          src="https://media.cwd-cdn.com/C-W-D/images/made-in-canada.png"
+          alt="Made in Canada"
+          width="220"
+          height="220"
+        >
+        <h1 class="hero-brand">
+          <span class="hero-brand-top">COLLINGWOOD</span>
+          <span class="hero-brand-bottom">
+            <span class="hero-web">web</span><span class="hero-design">design</span>
+          </span>
+        </h1>
+        <p class="hero-sub">
+          <span class="hero-sub-line">Websites designed to be</span>
+          <span class="hero-sub-line">found, remembered <em>&amp;</em> loved.</span>
+        </p>
+        <ul class="hero-tags" aria-label="Services">
+          <li>Web Design</li>
+          <li>Development</li>
+          <li>SEO / AEO</li>
+          <li>Graphic Design</li>
+        </ul>
         <div class="hero-cta">
-          <a class="btn btn-light btn-arrow" href="#featured-work">View our work</a>
+          <a class="btn btn-hero" href="#featured-work">View our work <span class="btn-down" aria-hidden="true"></span></a>
         </div>
       </div>
     </section>
@@ -197,8 +219,8 @@
           </div>
           <a class="btn btn-ghost" href="about">View all clients</a>
         </div>
-        <div>
-          <p class="eyebrow">Testimonials</p>
+        <div id="reviews">
+          <p class="eyebrow">Reviews</p>
           <h2 class="section-title">Real people. Real results.</h2>
           <div class="google-rating">
             <span class="google-mark" aria-hidden="true">G</span>
@@ -211,7 +233,7 @@
             “John and Judy captured exactly what we needed — professional, warm, and true to our practice.”
             <cite>Anne Baker, Partners in Health</cite>
           </blockquote>
-          <a class="btn btn-ghost" href="testimonials">Read more reviews</a>
+          <!-- Google reviews embed goes here -->
         </div>
       </div>
     </section>
@@ -250,7 +272,7 @@
     </div>
     <div class="legal-bar">
       <div class="legal-inner">
-        <p>© Copyright <span data-year></span> · Collingwood Web Design · 705 446-9696</p>
+        <p>Â© Copyright <span data-year></span> · Collingwood Web Design · 705 446-9696</p>
         <div class="legal-links">
           <span class="maple-inline"><svg viewBox="0 0 24 24"><path d="M12 2l1.2 3.4h3.6l-2.9 2.1 1.1 3.5L12 9.8 8.9 11l1.1-3.5L7.1 5.4h3.6L12 2z"/></svg> Made in Canada</span>
           <a href="privacy">Privacy Policy</a>
