@@ -809,11 +809,12 @@ ul {
 }
 
 .ticker-item .maple {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 1.05rem;
+  height: 1.35rem;
   color: #fff;
   fill: #fff;
   flex-shrink: 0;
+  display: block;
 }
 
 /* Services */
@@ -1438,9 +1439,10 @@ ul {
 }
 
 .maple-inline svg {
-  width: 0.75rem;
-  height: 0.75rem;
-  fill: var(--red);
+  width: 0.8rem;
+  height: 1.05rem;
+  color: var(--red);
+  fill: currentColor;
 }
 
 .social-icons {
