@@ -1,0 +1,21 @@
+# Dependencies / tooling
+node_modules/
+.wrangler/
+wrangler.toml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local media originals (served from CDN)
+# Keep thin placeholders only; large assets live on R2
+assets/images/*
+!assets/images/.gitkeep

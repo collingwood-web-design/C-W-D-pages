@@ -1,0 +1,33 @@
+:root {
+  --bg: #0f1419;
+  --fg: #f4f6f8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, #1a2836 0%, transparent 55%),
+    var(--bg);
+  color: var(--fg);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.site-header {
+  text-align: center;
+  padding: 2rem;
+}
+
+.brand-logo {
+  display: block;
+  max-width: min(28rem, 85vw);
+  width: 100%;
+  height: auto;
+}
