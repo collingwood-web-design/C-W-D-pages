@@ -809,8 +809,8 @@ ul {
 }
 
 .ticker-item .maple {
-  width: 1.15rem;
-  height: 1.2rem;
+  width: 1.35rem;
+  height: 1.4rem;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
