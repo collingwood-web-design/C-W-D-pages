@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Collingwood Web Design</title>
+  <meta name="description" content="Contact Collingwood Web Design — 93A Hurontario St, Collingwood. Call 705 446 9696 or send a message.">
+  <link rel="canonical" href="https://www.collingwoodwebdesign.com/contact">
+  <script>
+    (function () {
+      if (location.protocol === "file:") return;
+      if (/\.html$/i.test(location.pathname)) {
+        location.replace(location.pathname.replace(/\.html$/i, "") + location.search + location.hash);
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="./" aria-label="Collingwood Web Design home">
+        <span class="logo-strong">COLLINGWOOD</span>
+        <span class="logo-accent">webdesign</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="web-design">Web Design</a></li>
+          <li><a href="graphics">Graphics</a></li>
+          <li><a href="testimonials">Testimonials</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="section-inner">
+        <p class="eyebrow">Coffee?</p>
+        <h1>Let's chat</h1>
+        <p>Come visit us and let's brainstorm over a coffee. We're down the alley — the door before Gibson's.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner contact-layout">
+        <div>
+          <dl class="contact-details">
+            <dt>Phone</dt>
+            <dd><a href="tel:+17054469696">705 446 9696</a><br>John or Judy</dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:john@collingwoodwebdesign.com">john@collingwoodwebdesign.com</a></dd>
+            <dt>Address</dt>
+            <dd>Collingwood Web Design<br>93A Hurontario Street<br>Collingwood, ON L9Y 2L9<br>Canada</dd>
+          </dl>
+        </div>
+
+        <div>
+          <p class="eyebrow">Contact us</p>
+          <h2 class="section-title" style="font-size:2.4rem;margin-bottom:1.25rem">We would like to hear from you</h2>
+          <form id="contact-form">
+            <label>
+              Your First &amp; Last Name
+              <input name="First Name" required autocomplete="name">
+            </label>
+            <label>
+              Your Email
+              <input name="Email" type="email" required autocomplete="email">
+            </label>
+            <label>
+              Subject
+              <input name="Subject" required>
+            </label>
+            <label>
+              Your Message or Comments
+              <textarea name="Message" required></textarea>
+            </label>
+            <label>
+              Phone (optional — for a free consult)
+              <input name="Phone" type="tel" autocomplete="tel">
+            </label>
+            <input
+              type="text"
+              name="website"
+              data-cwd-honeypot
+              tabindex="-1"
+              autocomplete="off"
+              style="position:absolute;left:-9999px;opacity:0;height:0;width:0"
+              aria-hidden="true"
+            >
+            <button class="btn btn-solid" type="submit">Submit</button>
+            <p data-cwd-contact-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/footer-bg.jpg" alt="" width="1600" height="900" loading="lazy"></div>
+      <div class="footer-grid">
+        <div>
+          <h2>Coffee? Let's chat!</h2>
+          <div class="footer-meta">
+            <p><span>Phone</span><a href="tel:+17054469696">705 446 9696</a></p>
+            <p><span>Email</span><a href="mailto:john@collingwoodwebdesign.com">john@collingwoodwebdesign.com</a></p>
+            <p><span>Address</span>93A Hurontario St, Collingwood, ON L9Y 2L9</p>
+          </div>
+        </div>
+        <p class="footer-words" aria-hidden="true"><span class="code">code</span><span class="develop">develop</span></p>
+      </div>
+    </div>
+    <div class="legal-bar">
+      <div class="legal-inner">
+        <p>© Copyright <span data-year></span> · Collingwood Web Design</p>
+        <div class="legal-links">
+          <a href="privacy">Privacy Policy</a>
+          <a href="terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://web-production-54a6d.up.railway.app/static/cwd-contact.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
