@@ -1632,7 +1632,7 @@ ul {
 @media (min-width: 900px) {
   .footer-words {
     writing-mode: vertical-rl;
-    transform: none;
+    transform: rotate(180deg);
     text-align: left;
     justify-self: end;
   }
