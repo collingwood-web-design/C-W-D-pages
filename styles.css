@@ -885,8 +885,8 @@ ul {
 .service-card::after {
   content: "";
   position: absolute;
-  left: 1.35rem;
-  right: 1.35rem;
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 2px;
   background: var(--red);
