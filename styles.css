@@ -1255,8 +1255,9 @@ ul {
   display: flex;
   width: max-content;
   align-items: center;
-  gap: 3rem;
-  animation: client-marquee 45s linear infinite;
+  gap: 3.5rem;
+  animation: client-marquee 40s linear infinite;
+  will-change: transform;
 }
 
 .client-carousel:hover .client-track {
@@ -1267,19 +1268,19 @@ ul {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 13rem;
-  height: 5.75rem;
+  width: 16.5rem;
+  height: 7rem;
 }
 
 .client-slide img {
   display: block;
   max-width: 100%;
-  max-height: 4.75rem;
+  max-height: 6rem;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(1);
-  opacity: 0.72;
+  opacity: 0.78;
   transition: opacity 0.3s var(--ease), filter 0.3s var(--ease);
 }
 
@@ -1826,15 +1827,16 @@ ul {
 
 @media (max-width: 480px) {
   .client-slide {
-    width: 10rem;
-    height: 4.5rem;
+    width: 12rem;
+    height: 5.25rem;
   }
 
   .client-slide img {
-    max-height: 3.75rem;
+    max-height: 4.5rem;
   }
 
   .client-track {
-    gap: 2.25rem;
+    gap: 2.5rem;
+    animation-duration: 36s;
   }
 }
