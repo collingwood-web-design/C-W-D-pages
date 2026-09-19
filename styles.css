@@ -658,6 +658,11 @@ ul {
   line-height: 1.7;
 }
 
+.section-lead strong {
+  color: var(--black);
+  font-weight: 800;
+}
+
 .section-center {
   text-align: center;
 }
