@@ -659,7 +659,7 @@ ul {
 }
 
 .section-lead strong {
-  color: var(--black);
+  color: var(--red);
   font-weight: 800;
 }
 
