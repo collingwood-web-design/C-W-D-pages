@@ -640,10 +640,6 @@ ul {
   color: var(--black);
 }
 
-.section-title-soft {
-  font-weight: 400;
-}
-
 .section-subhead {
   margin-top: 0.55rem;
   font-family: var(--font-body);
