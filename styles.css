@@ -227,6 +227,18 @@ ul {
   color: #fff;
 }
 
+.btn-fill-red {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.btn-fill-red:hover {
+  color: var(--red);
+  background: #fff;
+  border-color: var(--red);
+}
+
 .btn-solid {
   background: var(--black);
   color: #fff;
@@ -1234,6 +1246,11 @@ ul {
   text-align: center;
 }
 
+.work-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 /* Social proof */
 .proof {
   background: var(--fog);
@@ -1709,7 +1726,7 @@ ul {
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.85rem 1.25rem;
+  padding: 1.4rem 1.25rem;
 }
 
 .legal-inner {
