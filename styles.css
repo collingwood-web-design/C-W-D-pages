@@ -927,17 +927,6 @@ ul {
   transition: opacity 0.35s var(--service-ease), transform 0.45s var(--service-ease);
 }
 
-.service-icon {
-  position: relative;
-  z-index: 1;
-  width: 2.45rem;
-  height: 2.45rem;
-  color: var(--red);
-  margin-bottom: 1.15rem;
-  overflow: visible;
-  transition: transform 0.35s var(--service-ease);
-}
-
 .service-card h3,
 .service-card p,
 .service-extra,
@@ -952,7 +941,7 @@ ul {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.3;
-  margin-bottom: 0.75rem;
+  margin: 0.35rem 1.75rem 0.75rem 0;
 }
 
 .service-card > p {
@@ -1051,11 +1040,6 @@ ul {
     transform: translateY(0);
   }
 
-  .service-card:hover .service-icon,
-  .service-card:focus-within .service-icon {
-    transform: translateY(-2px) rotate(-4deg);
-  }
-
   .service-card:hover .service-more,
   .service-card:focus-within .service-more {
     transform: scale(1.04);
@@ -1088,7 +1072,6 @@ ul {
   .service-card,
   .service-card::before,
   .service-card::after,
-  .service-icon,
   .service-motif,
   .service-index,
   .service-more,
