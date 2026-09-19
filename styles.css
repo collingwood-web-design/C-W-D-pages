@@ -929,7 +929,7 @@ ul {
 
 .service-icon-space {
   display: block;
-  width: 2.45rem;
+  width: 100%;
   height: 2.45rem;
   margin-bottom: 1.15rem;
   flex-shrink: 0;
@@ -950,13 +950,15 @@ ul {
   text-transform: uppercase;
   line-height: 1.3;
   margin-bottom: 0.75rem;
-  padding-right: 1.75rem;
+  padding-inline: 1.5rem;
+  text-align: center;
 }
 
 .service-card > p {
   font-size: 0.9rem;
   color: var(--muted);
   flex: 1;
+  text-align: center;
 }
 
 .service-more {
