@@ -740,11 +740,11 @@ ul {
   position: relative;
   z-index: 1;
   font-family: var(--font-body);
-  font-size: clamp(3.5rem, 8vw, 5.75rem);
+  font-size: clamp(4.25rem, 9.5vw, 6.75rem);
   font-weight: 900;
   color: var(--red);
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  transform: none;
   letter-spacing: 0.02em;
   line-height: 1;
   text-transform: lowercase;
