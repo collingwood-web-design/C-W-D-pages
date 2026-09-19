@@ -1247,6 +1247,13 @@ ul {
 .trustindex-embed {
   margin-top: 1.5rem;
   text-align: center;
+  filter: grayscale(1);
+  transition: filter 0.35s var(--ease);
+}
+
+.trustindex-embed:hover,
+.trustindex-embed:focus-within {
+  filter: grayscale(0.35);
 }
 
 .trustindex-embed > div,
