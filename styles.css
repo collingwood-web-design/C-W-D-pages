@@ -640,6 +640,21 @@ ul {
   color: var(--black);
 }
 
+.section-title-soft {
+  font-weight: 400;
+}
+
+.section-subhead {
+  margin-top: 0.55rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center;
+}
+
 .section-lead {
   margin-top: 1rem;
   max-width: 38rem;
