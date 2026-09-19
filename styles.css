@@ -15,6 +15,7 @@
   --font-logo: "Lato", sans-serif;
   --font-script: "Caveat", cursive;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --hero-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *,
@@ -491,7 +492,7 @@ ul {
   letter-spacing: 0.01em;
   max-width: 12ch;
   opacity: 0;
-  animation: fadeUp 0.9s 0.1s var(--ease) forwards;
+  animation: fadeUp 1.75s 0.2s var(--hero-ease) forwards;
 }
 
 .hero-brand-top {
@@ -530,7 +531,7 @@ ul {
   line-height: 1.35;
   color: #fff;
   opacity: 0;
-  animation: fadeUp 0.9s 0.25s var(--ease) forwards;
+  animation: fadeUp 1.75s 0.55s var(--hero-ease) forwards;
 }
 
 .hero-sub-line {
@@ -561,7 +562,7 @@ ul {
   color: #fff;
   list-style: none;
   opacity: 0;
-  animation: fadeUp 0.9s 0.35s var(--ease) forwards;
+  animation: fadeUp 1.75s 0.9s var(--hero-ease) forwards;
 }
 
 .hero-tags li {
@@ -582,7 +583,7 @@ ul {
 .hero-cta {
   margin-top: 1.85rem;
   opacity: 0;
-  animation: fadeUp 0.9s 0.45s var(--ease) forwards;
+  animation: fadeUp 1.75s 1.25s var(--hero-ease) forwards;
 }
 
 .btn-hero {
@@ -1749,8 +1750,8 @@ ul {
 
 /* Animations */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes fadeInSlow {
