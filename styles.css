@@ -1592,6 +1592,13 @@ ul {
   margin-bottom: 1.5rem;
 }
 
+.footer-signatures {
+  display: block;
+  width: min(12.5rem, 70%);
+  height: auto;
+  margin: 0 0 1.35rem;
+}
+
 .footer-meta span {
   display: block;
   font-size: 0.68rem;
