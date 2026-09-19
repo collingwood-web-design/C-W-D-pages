@@ -1267,14 +1267,14 @@ ul {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 9.5rem;
-  height: 4.25rem;
+  width: 13rem;
+  height: 5.75rem;
 }
 
 .client-slide img {
   display: block;
   max-width: 100%;
-  max-height: 3.5rem;
+  max-height: 4.75rem;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1826,11 +1826,15 @@ ul {
 
 @media (max-width: 480px) {
   .client-slide {
-    width: 7.5rem;
-    height: 3.5rem;
+    width: 10rem;
+    height: 4.5rem;
+  }
+
+  .client-slide img {
+    max-height: 3.75rem;
   }
 
   .client-track {
-    gap: 2rem;
+    gap: 2.25rem;
   }
 }
