@@ -663,6 +663,13 @@ ul {
   font-weight: 800;
 }
 
+.section-aside {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 .section-center {
   text-align: center;
 }
