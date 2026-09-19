@@ -1579,6 +1579,16 @@ ul {
   align-items: end;
 }
 
+.footer-note {
+  max-width: var(--max);
+  margin: 2.75rem auto 0;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .footer-grid h2 {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 5vw, 3.4rem);
