@@ -653,8 +653,9 @@ ul {
 
 .section-lead {
   margin-top: 1rem;
-  max-width: 38rem;
+  max-width: 44rem;
   color: var(--muted);
+  line-height: 1.7;
 }
 
 .section-center {
