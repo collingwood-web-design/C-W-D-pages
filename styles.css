@@ -927,6 +927,14 @@ ul {
   transition: opacity 0.35s var(--service-ease), transform 0.45s var(--service-ease);
 }
 
+.service-icon-space {
+  display: block;
+  width: 2.45rem;
+  height: 2.45rem;
+  margin-bottom: 1.15rem;
+  flex-shrink: 0;
+}
+
 .service-card h3,
 .service-card p,
 .service-extra,
@@ -941,7 +949,8 @@ ul {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.3;
-  margin: 0.35rem 1.75rem 0.75rem 0;
+  margin-bottom: 0.75rem;
+  padding-right: 1.75rem;
 }
 
 .service-card > p {
