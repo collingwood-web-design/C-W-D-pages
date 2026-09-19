@@ -1607,28 +1607,32 @@ ul {
 }
 
 .footer-words {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(3.5rem, 9vw, 6rem);
+  font-weight: 900;
   line-height: 0.88;
   letter-spacing: 0.02em;
   text-align: right;
   writing-mode: horizontal-tb;
+  text-transform: lowercase;
 }
 
 .footer-words .code {
   display: block;
   color: #fff;
+  font-weight: 900;
 }
 
 .footer-words .develop {
   display: block;
   color: var(--red);
+  font-weight: 900;
 }
 
 @media (min-width: 900px) {
   .footer-words {
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    transform: none;
     text-align: left;
     justify-self: end;
   }
