@@ -1594,7 +1594,7 @@ ul {
 
 .footer-signatures {
   display: block;
-  width: min(12.5rem, 70%);
+  width: min(10rem, 56%);
   height: auto;
   margin: 0 0 1.35rem;
 }
