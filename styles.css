@@ -930,10 +930,11 @@ ul {
 .service-icon {
   position: relative;
   z-index: 1;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.45rem;
+  height: 2.45rem;
   color: var(--red);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.15rem;
+  overflow: visible;
   transition: transform 0.35s var(--service-ease);
 }
 
