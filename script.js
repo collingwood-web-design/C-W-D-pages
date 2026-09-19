@@ -53,46 +53,6 @@
     requestAnimationFrame(tick);
   }
 
-  /* Featured work carousel */
-  const track = document.querySelector(".work-track");
-  const cards = track ? [...track.querySelectorAll(".work-card")] : [];
-  const prev = document.querySelector(".work-prev");
-  const next = document.querySelector(".work-next");
-  let index = 0;
-
-  function perView() {
-    return window.matchMedia("(max-width: 960px)").matches ? 1 : 2;
-  }
-
-  function maxIndex() {
-    return Math.max(0, cards.length - perView());
-  }
-
-  function renderCarousel() {
-    if (!track || !cards.length) return;
-    index = Math.min(index, maxIndex());
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const gap = 20;
-    const offset = index * (cardWidth + gap);
-    track.style.transform = `translateX(-${offset}px)`;
-  }
-
-  if (prev && next && cards.length) {
-    prev.addEventListener("click", () => {
-      index = Math.max(0, index - 1);
-      renderCarousel();
-    });
-    next.addEventListener("click", () => {
-      index = Math.min(maxIndex(), index + 1);
-      renderCarousel();
-    });
-    window.addEventListener("resize", () => {
-      if (!reduceMotion) renderCarousel();
-      else renderCarousel();
-    });
-    renderCarousel();
-  }
-
   /* Year in copyright */
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());
