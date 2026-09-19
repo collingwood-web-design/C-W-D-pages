@@ -1235,13 +1235,24 @@ ul {
 }
 
 .proof-reviews {
-  max-width: 36rem;
+  max-width: 56rem;
   margin: 2.5rem auto 0;
   text-align: center;
 }
 
 .proof-reviews .google-rating {
   justify-content: center;
+}
+
+.trustindex-embed {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.trustindex-embed > div,
+.trustindex-embed iframe {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .client-carousel {
