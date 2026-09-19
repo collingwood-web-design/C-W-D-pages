@@ -19,6 +19,7 @@ Thumbs.db
 # Keep thin placeholders only; large assets live on R2
 assets/images/*
 !assets/images/.gitkeep
+assets/client logos/
 
 # Scraped / temp reference
 _ref/
