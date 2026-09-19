@@ -27,6 +27,32 @@
     });
   });
 
+  /* Client logo marquee — seamless continuous loop */
+  const clientCarousel = document.querySelector(".client-carousel");
+  const clientTrack = document.querySelector(".client-track");
+  const clientGroup = clientTrack?.querySelector(".client-group");
+  if (clientCarousel && clientTrack && clientGroup && !reduceMotion) {
+    let offset = 0;
+    let paused = false;
+    const speed = 0.55; /* px per frame at ~60fps */
+
+    clientCarousel.addEventListener("mouseenter", () => { paused = true; });
+    clientCarousel.addEventListener("mouseleave", () => { paused = false; });
+    clientCarousel.addEventListener("focusin", () => { paused = true; });
+    clientCarousel.addEventListener("focusout", () => { paused = false; });
+
+    const tick = () => {
+      if (!paused) {
+        offset += speed;
+        const loopWidth = clientGroup.offsetWidth;
+        if (loopWidth > 0 && offset >= loopWidth) offset -= loopWidth;
+        clientTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
   /* Featured work carousel */
   const track = document.querySelector(".work-track");
   const cards = track ? [...track.querySelectorAll(".work-card")] : [];

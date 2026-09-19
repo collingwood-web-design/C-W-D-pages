@@ -1247,35 +1247,39 @@ ul {
 .client-carousel {
   margin-top: 1.75rem;
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
 .client-track {
   display: flex;
   width: max-content;
   align-items: center;
-  gap: 3.5rem;
-  animation: client-marquee 40s linear infinite;
+  gap: 0;
+  transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
-.client-carousel:hover .client-track {
-  animation-play-state: paused;
+.client-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .client-slide {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 16.5rem;
-  height: 7rem;
+  width: 15.5rem;
+  height: 6.5rem;
 }
 
 .client-slide img {
   display: block;
   max-width: 100%;
-  max-height: 6rem;
+  max-height: 5.5rem;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1289,29 +1293,30 @@ ul {
   opacity: 1;
 }
 
-@keyframes client-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .client-track {
-    animation: none;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 56rem;
-    margin: 0 auto;
-    justify-content: center;
-    gap: 1.5rem 2rem;
-  }
-
-  .client-slide[aria-hidden="true"] {
-    display: none;
-  }
-
   .client-carousel {
     mask-image: none;
     -webkit-mask-image: none;
+  }
+
+  .client-track {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    transform: none !important;
+    will-change: auto;
+    justify-content: center;
+  }
+
+  .client-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem 1.75rem;
+    padding-right: 0;
+  }
+
+  .client-group[aria-hidden="true"] {
+    display: none;
   }
 }
 
@@ -1827,16 +1832,16 @@ ul {
 
 @media (max-width: 480px) {
   .client-slide {
-    width: 12rem;
-    height: 5.25rem;
+    width: 11.5rem;
+    height: 5rem;
   }
 
   .client-slide img {
-    max-height: 4.5rem;
+    max-height: 4.25rem;
   }
 
-  .client-track {
-    gap: 2.5rem;
-    animation-duration: 36s;
+  .client-group {
+    gap: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
