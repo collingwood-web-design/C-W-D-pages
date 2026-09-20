@@ -1981,7 +1981,7 @@ ul {
 
 .about-skye {
   background: var(--fog);
-  padding: 4rem 0;
+  padding: 4rem 1.25rem;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -2104,8 +2104,7 @@ ul {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
   align-items: end;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: 5rem 1.25rem;
 }
 
 .about-place-eyebrow {
@@ -2124,6 +2123,12 @@ ul {
   letter-spacing: -0.02em;
   line-height: 1.05;
   margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.about-place-line2 {
+  color: #fff;
 }
 
 .about-script--place {
@@ -2144,21 +2149,19 @@ ul {
   display: inline-block;
 }
 
-.about-coffee {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+.about-bridge {
+  background: var(--paper);
+  padding: 3.25rem 1.25rem;
+  border-top: 1px solid var(--line);
 }
 
-.about-coffee h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-}
-
-.about-coffee p {
+.about-bridge p {
+  margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 36rem;
+  margin-inline: auto;
 }
 
 /* Responsive */
