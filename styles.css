@@ -2271,8 +2271,7 @@ ul {
   border-bottom: 1px solid var(--line);
 }
 
-.about-bridge p,
-.seo-bridge p {
+.about-bridge p {
   margin: 0;
   color: var(--ink);
   font-size: clamp(1.15rem, 2.2vw, 1.45rem);
@@ -2281,6 +2280,38 @@ ul {
   line-height: 1.4;
   max-width: 36rem;
   margin-inline: auto;
+}
+
+.seo-bridge .section-inner {
+  text-align: center;
+  max-width: 40rem;
+}
+
+.seo-bridge .eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+.seo-bridge h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-style: normal;
+  margin: 0 0 0.85rem;
+}
+
+.seo-bridge h2 .accent {
+  font-style: normal;
+}
+
+.seo-bridge-lead {
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 34rem;
 }
 
 /* Responsive */
