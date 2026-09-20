@@ -57,4 +57,46 @@
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());
   });
+
+  /* Animated section rules (draw + shimmer) */
+  const rules = document.querySelectorAll("[data-section-rule]");
+  if (rules.length) {
+    const reveal = (el) => el.classList.add("is-in");
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      rules.forEach(reveal);
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            reveal(entry.target);
+            io.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.4 }
+      );
+      rules.forEach((rule) => io.observe(rule));
+    }
+  }
+
+  /* Staggered list reveal */
+  const revealLists = document.querySelectorAll("[data-reveal-list]");
+  if (revealLists.length) {
+    const reveal = (el) => el.classList.add("is-in");
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealLists.forEach(reveal);
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            reveal(entry.target);
+            io.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.35 }
+      );
+      revealLists.forEach((list) => io.observe(list));
+    }
+  }
 })();
