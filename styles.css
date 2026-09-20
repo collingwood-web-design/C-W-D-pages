@@ -2413,7 +2413,7 @@ ul {
 
 .seo-hero {
   padding-top: 3.5rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .seo-hero-grid {
@@ -2476,7 +2476,7 @@ ul {
 }
 
 .seo-pair {
-  padding-top: 2rem;
+  padding-top: 3.25rem;
   padding-bottom: 4rem;
 }
 
@@ -2523,7 +2523,7 @@ ul {
   position: relative;
   color: #fff;
   overflow: hidden;
-  min-height: 22rem;
+  min-height: 24rem;
   display: grid;
   align-items: center;
 }
@@ -2565,7 +2565,7 @@ ul {
 .seo-cta-inner {
   position: relative;
   z-index: 1;
-  padding: 4.5rem 1.25rem;
+  padding: 5.75rem 1.25rem;
   width: 100%;
 }
 
@@ -3065,7 +3065,7 @@ ul {
 .section-rule {
   position: relative;
   height: 2px;
-  margin: 0;
+  margin: 0.85rem 0;
 }
 
 .section-rule--full {
