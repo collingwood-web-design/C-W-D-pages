@@ -1844,6 +1844,11 @@ ul {
 
 .about-hero {
   padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.about-bios {
+  padding-top: 2.5rem;
 }
 
 .about-hero-grid {
