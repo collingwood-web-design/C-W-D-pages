@@ -2595,6 +2595,31 @@ ul {
   background: linear-gradient(90deg, rgba(8, 8, 10, 0.82) 0%, rgba(8, 8, 10, 0.55) 55%, rgba(8, 8, 10, 0.35) 100%);
 }
 
+.seo-band--ai {
+  min-height: 0;
+  display: block;
+}
+
+.seo-band--ai .seo-band-media {
+  position: relative;
+  inset: auto;
+}
+
+.seo-band--ai .seo-band-media img {
+  width: 100%;
+  height: auto;
+  object-fit: unset;
+  display: block;
+}
+
+.seo-band--ai .seo-ai-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .seo-band--picture {
   min-height: 0;
   display: block;
