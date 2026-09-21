@@ -1557,6 +1557,15 @@ ul {
   }
 }
 
+@keyframes pageHeroZoomMobile {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .page-hero-media-inner {
   font-family: var(--font-body);
   padding-top: 5rem;
@@ -1596,6 +1605,14 @@ ul {
 }
 
 @media (max-width: 960px) {
+  /* Keep the phone (right side of the plate) in frame on tall viewports */
+  .page-hero-media .hero-media img {
+    object-position: right center;
+    transform-origin: 92% 45%;
+    transform: scale(1.12);
+    animation: pageHeroZoomMobile 28s var(--ease) forwards;
+  }
+
   .page-hero-media-inner {
     padding-top: 2.5rem;
     padding-bottom: 2.75rem;
@@ -1603,6 +1620,13 @@ ul {
 
   .page-hero-media-inner h1 {
     font-size: clamp(1.85rem, 7.5vw, 2.85rem);
+  }
+}
+
+@media (max-width: 720px) {
+  .page-hero-media .hero-media img {
+    object-position: 100% 40%;
+    transform-origin: 100% 40%;
   }
 }
 
