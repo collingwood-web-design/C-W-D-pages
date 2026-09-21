@@ -1557,41 +1557,6 @@ ul {
   }
 }
 
-@keyframes pageHeroZoomMobile {
-  from {
-    transform: scale(1.12);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-/* Narrow desktop: keep the phone top in frame (cover crops top/bottom) */
-@media (max-width: 1400px) and (min-width: 961px) {
-  .page-hero-media .hero-media img {
-    object-position: 70% 12%;
-    transform-origin: 72% 18%;
-    transform: scale(1.14);
-    animation: pageHeroZoomCompact 28s var(--ease) forwards;
-  }
-}
-
-@media (max-width: 1120px) and (min-width: 961px) {
-  .page-hero-media .hero-media img {
-    object-position: 78% 6%;
-    transform-origin: 80% 10%;
-  }
-}
-
-@keyframes pageHeroZoomCompact {
-  from {
-    transform: scale(1.16) translate(1%, 0);
-  }
-  to {
-    transform: scale(1) translate(0, 0);
-  }
-}
-
 .page-hero-media-inner {
   font-family: var(--font-body);
   padding-top: 5rem;
@@ -1631,12 +1596,9 @@ ul {
 }
 
 @media (max-width: 960px) {
-  /* Keep the phone (right side of the plate) in frame on tall viewports */
+  /* Keep the phone in frame on tall viewports */
   .page-hero-media .hero-media img {
     object-position: right center;
-    transform-origin: 92% 45%;
-    transform: scale(1.12);
-    animation: pageHeroZoomMobile 28s var(--ease) forwards;
   }
 
   .page-hero-media::after {
@@ -1662,7 +1624,6 @@ ul {
 @media (max-width: 720px) {
   .page-hero-media .hero-media img {
     object-position: 100% 40%;
-    transform-origin: 100% 40%;
   }
 
   .page-hero-media::after {
