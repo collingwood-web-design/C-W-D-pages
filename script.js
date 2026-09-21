@@ -99,4 +99,25 @@
       revealLists.forEach((list) => io.observe(list));
     }
   }
+  /* Cookie banner */
+  const COOKIE_KEY = "cwd-cookie-consent";
+  if (!localStorage.getItem(COOKIE_KEY)) {
+    const banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Cookie notice");
+    banner.innerHTML = `
+      <div class="cookie-banner-inner">
+        <p>We use cookies to keep the site running smoothly. See our <a href="privacy">Privacy Policy</a> for details.</p>
+        <button type="button" class="btn btn-fill-red cookie-banner-accept">Got it</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add("is-visible"));
+    banner.querySelector(".cookie-banner-accept").addEventListener("click", () => {
+      localStorage.setItem(COOKIE_KEY, "1");
+      banner.classList.remove("is-visible");
+      window.setTimeout(() => banner.remove(), 320);
+    });
+  }
 })();

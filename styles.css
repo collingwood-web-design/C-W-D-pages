@@ -1541,6 +1541,71 @@ ul {
   color: rgba(255, 255, 255, 0.78);
 }
 
+/* Inner-page media hero (stronger Ken Burns than home) */
+.page-hero-media .hero-media img {
+  object-position: center center;
+  transform: scale(1.22);
+  animation: pageHeroZoom 28s var(--ease) forwards;
+}
+
+@keyframes pageHeroZoom {
+  from {
+    transform: scale(1.28) translate(2.5%, 1%);
+  }
+  to {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.page-hero-media-inner {
+  font-family: var(--font-body);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.page-hero-media-inner .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.85rem;
+  opacity: 0;
+  animation: fadeUp 1.2s 0.15s var(--hero-ease) forwards;
+}
+
+.page-hero-media-inner h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 4.25rem);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0;
+  opacity: 0;
+  animation: fadeUp 1.4s 0.3s var(--hero-ease) forwards;
+}
+
+.page-hero-media-inner .page-hero-line {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.page-hero-media-inner p:not(.eyebrow) {
+  margin-top: 0.85rem;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  opacity: 0;
+  animation: fadeUp 1.4s 0.5s var(--hero-ease) forwards;
+}
+
+@media (max-width: 960px) {
+  .page-hero-media-inner {
+    padding-top: 2.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .page-hero-media-inner h1 {
+    font-size: clamp(1.85rem, 7.5vw, 2.85rem);
+  }
+}
+
 .content-block {
   max-width: 42rem;
 }
@@ -3420,5 +3485,63 @@ ul {
     background-size: auto;
     background-position: center;
     filter: none;
+  }
+}
+
+/* Cookie banner */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom, 0px));
+  background: var(--black);
+  color: #fff;
+  border-top: 2px solid var(--red);
+  transform: translateY(110%);
+  transition: transform 0.35s var(--ease);
+}
+
+.cookie-banner.is-visible {
+  transform: translateY(0);
+}
+
+.cookie-banner-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.cookie-banner p {
+  margin: 0;
+  flex: 1 1 16rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cookie-banner a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  font-weight: 700;
+}
+
+.cookie-banner a:hover {
+  color: var(--red);
+}
+
+.cookie-banner-accept {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner {
+    transition: none;
   }
 }
