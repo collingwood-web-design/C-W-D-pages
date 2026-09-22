@@ -55,6 +55,20 @@
       >
     </section>
 
+    <section class="service-jump" aria-label="Related services">
+      <div class="service-jump-inner">
+        <p class="service-jump-label">More ways we can help</p>
+        <div class="section-rule section-rule--inline" aria-hidden="true" data-section-rule>
+          <span class="section-rule__track"></span>
+          <span class="section-rule__accent"></span>
+        </div>
+        <div class="service-jump-actions">
+          <a class="service-jump-btn" href="web-design">Web Design</a>
+          <a class="service-jump-btn" href="seo">SEO/AEO</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section contact-section">
       <div class="section-inner contact-layout">
         <aside class="contact-aside">
@@ -83,21 +97,21 @@
                 <input name="First Name" required autocomplete="name" placeholder="Jane Smith">
               </label>
               <label>
-                Your email
-                <input name="Email" type="email" required autocomplete="email" placeholder="you@example.com">
+                Phone <span class="contact-optional">(optional, if you’d like a call back)</span>
+                <input name="Phone" type="tel" autocomplete="tel" placeholder="705 555 0123">
               </label>
             </div>
             <label>
-              Subject
-              <input name="Subject" required placeholder="What's this about?">
+              Your email
+              <input name="Email" type="email" required autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label>
+              Website URL <span class="contact-optional">(optional — if you have one)</span>
+              <input name="Website URL" type="url" autocomplete="url" placeholder="https://example.com">
             </label>
             <label>
               Your message or comments
               <textarea name="Message" required placeholder="Tell us a little about your project…"></textarea>
-            </label>
-            <label>
-              Phone <span class="contact-optional">(optional, if you’d like a call back)</span>
-              <input name="Phone" type="tel" autocomplete="tel" placeholder="705 555 0123">
             </label>
             <input
               type="text"
