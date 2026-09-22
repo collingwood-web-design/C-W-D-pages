@@ -1704,6 +1704,101 @@ ul {
   }
 }
 
+/* Graphics hero — figure hangs over the jump bar */
+.graphics-hero {
+  overflow: visible;
+  z-index: 2;
+  min-height: min(72vh, 38rem);
+  margin-bottom: 4.5rem;
+}
+
+.graphics-hero .hero-media {
+  overflow: visible;
+  z-index: 0;
+  background: #000;
+}
+
+.graphics-hero .hero-media img {
+  object-fit: cover;
+  object-position: 78% bottom;
+  width: 100%;
+  height: calc(100% + 5.5rem);
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform-origin: 78% 100%;
+  transform: scale3d(1.16, 1.16, 1);
+  animation: heroKenBurnsGraphics 12s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@keyframes heroKenBurnsGraphics {
+  from {
+    transform: scale3d(1.2, 1.2, 1) translate3d(1.2%, -0.4%, 0);
+  }
+  to {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+}
+
+.graphics-hero::after {
+  z-index: 1;
+  bottom: 0;
+  height: 100%;
+  inset: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.12) 42%,
+    rgba(0, 0, 0, 0) 68%
+  );
+}
+
+.graphics-hero .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.graphics-page .service-jump {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 960px) {
+  .graphics-hero {
+    min-height: min(70svh, 34rem);
+    margin-bottom: 3.5rem;
+  }
+
+  .graphics-hero .hero-media img {
+    object-position: 88% bottom;
+    height: calc(100% + 4.25rem);
+    transform-origin: 88% 100%;
+  }
+
+  .graphics-hero .page-hero-media-inner > p:not(.eyebrow) {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .graphics-hero {
+    min-height: min(62svh, 28rem);
+    margin-bottom: 3rem;
+    align-items: end;
+  }
+
+  .graphics-hero .hero-media img {
+    object-position: 92% bottom;
+    height: calc(100% + 3.25rem);
+    transform-origin: 92% 100%;
+  }
+}
+
 /* Service jump bar (below hero) */
 .service-jump {
   background: #fff;
