@@ -120,4 +120,19 @@
       window.setTimeout(() => banner.remove(), 320);
     });
   }
+  /* Case study letter lightbox */
+  const lightbox = document.getElementById("case-study-lightbox");
+  const lightboxImg = lightbox?.querySelector(".case-study-lightbox-img");
+  if (lightbox && lightboxImg) {
+    document.querySelectorAll("[data-lightbox]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        lightboxImg.src = trigger.getAttribute("data-lightbox-src") || "";
+        lightboxImg.alt = trigger.getAttribute("data-lightbox-alt") || "";
+        lightbox.showModal();
+      });
+    });
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  }
 })();
