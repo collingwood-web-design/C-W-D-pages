@@ -2814,6 +2814,11 @@ ul {
   color: var(--muted);
 }
 
+.case-study-result-copy .case-study-punch {
+  color: var(--red);
+  font-weight: 700;
+}
+
 .case-study-story-copy a {
   color: var(--red);
   font-weight: 700;
