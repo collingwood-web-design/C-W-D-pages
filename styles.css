@@ -1708,7 +1708,7 @@ ul {
 .graphics-hero {
   overflow: visible;
   z-index: 2;
-  min-height: min(72vh, 38rem);
+  min-height: min(78vh, 42rem);
   margin-bottom: 4.5rem;
 }
 
@@ -1763,6 +1763,10 @@ ul {
   z-index: 2;
 }
 
+.graphics-hero .page-hero-media-inner {
+  padding-top: 6.25rem;
+}
+
 .graphics-page .service-jump {
   position: relative;
   z-index: 1;
@@ -1770,8 +1774,12 @@ ul {
 
 @media (max-width: 960px) {
   .graphics-hero {
-    min-height: min(70svh, 34rem);
+    min-height: min(74svh, 37rem);
     margin-bottom: 3.5rem;
+  }
+
+  .graphics-hero .page-hero-media-inner {
+    padding-top: 3.5rem;
   }
 
   .graphics-hero .hero-media img {
@@ -1787,9 +1795,13 @@ ul {
 
 @media (max-width: 720px) {
   .graphics-hero {
-    min-height: min(62svh, 28rem);
+    min-height: min(66svh, 30rem);
     margin-bottom: 3rem;
     align-items: end;
+  }
+
+  .graphics-hero .page-hero-media-inner {
+    padding-top: 2.85rem;
   }
 
   .graphics-hero .hero-media img {
