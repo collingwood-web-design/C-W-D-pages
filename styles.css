@@ -1705,29 +1705,36 @@ ul {
 }
 
 /* Graphics hero — figure hangs over the jump bar */
+.graphics-page {
+  overflow-x: clip;
+}
+
 .graphics-hero {
   overflow: visible;
   z-index: 2;
   min-height: min(78vh, 42rem);
   margin-bottom: 4.5rem;
+  background: #000;
 }
 
 .graphics-hero .hero-media {
-  overflow: visible;
+  /* Taller than the band so feet can hang; overflow clips side spill from Ken Burns */
+  inset: 0 0 -5.5rem 0;
+  overflow: hidden;
   z-index: 0;
-  background: #000;
+  background: transparent;
 }
 
 .graphics-hero .hero-media img {
   object-fit: cover;
   object-position: 78% bottom;
   width: 100%;
-  height: calc(100% + 5.5rem);
+  height: 100%;
   top: 0;
   left: 0;
   position: absolute;
   transform-origin: 78% 100%;
-  transform: scale3d(1.16, 1.16, 1);
+  transform: scale3d(1.12, 1.12, 1);
   animation: heroKenBurnsGraphics 12s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   will-change: transform;
   backface-visibility: hidden;
@@ -1735,10 +1742,10 @@ ul {
 
 @keyframes heroKenBurnsGraphics {
   from {
-    transform: scale3d(1.2, 1.2, 1) translate3d(1.2%, -0.4%, 0);
+    transform: scale3d(1.16, 1.16, 1);
   }
   to {
-    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -1767,15 +1774,24 @@ ul {
   padding-top: 6.25rem;
 }
 
+.graphics-hero .page-hero-line {
+  white-space: normal;
+}
+
 .graphics-page .service-jump {
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 960px) {
+/* iPad landscape / small desktop — same framing as tablet so feet aren't cropped */
+@media (max-width: 1180px) {
   .graphics-hero {
     min-height: min(74svh, 37rem);
     margin-bottom: 3.5rem;
+  }
+
+  .graphics-hero .hero-media {
+    inset: 0 0 -4.25rem 0;
   }
 
   .graphics-hero .page-hero-media-inner {
@@ -1784,8 +1800,33 @@ ul {
 
   .graphics-hero .hero-media img {
     object-position: 88% bottom;
-    height: calc(100% + 4.25rem);
     transform-origin: 88% 100%;
+  }
+
+  .graphics-hero .page-hero-media-inner > p:not(.eyebrow) {
+    display: none;
+  }
+}
+
+/* Short viewports (tablet landscape chrome) — keep hang in view */
+@media (min-width: 721px) and (max-height: 860px) {
+  .graphics-hero {
+    min-height: min(58svh, 28rem);
+    margin-bottom: 5rem;
+  }
+
+  .graphics-hero .hero-media {
+    inset: 0 0 -4.75rem 0;
+  }
+
+  .graphics-hero .page-hero-media-inner {
+    padding-top: 2.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .graphics-hero .hero-media img {
+    object-position: right bottom;
+    transform-origin: 90% 100%;
   }
 
   .graphics-hero .page-hero-media-inner > p:not(.eyebrow) {
@@ -1800,14 +1841,165 @@ ul {
     align-items: end;
   }
 
+  .graphics-hero .hero-media {
+    inset: 0 0 -3.25rem 0;
+  }
+
   .graphics-hero .page-hero-media-inner {
     padding-top: 2.85rem;
   }
 
   .graphics-hero .hero-media img {
     object-position: 92% bottom;
-    height: calc(100% + 3.25rem);
     transform-origin: 92% 100%;
+  }
+}
+
+/* Graphics — logo mosaic */
+.gfx-logos {
+  padding-top: 3.25rem;
+  padding-bottom: 0;
+  background:
+    radial-gradient(ellipse 70% 45% at 10% 0%, rgba(196, 18, 26, 0.04), transparent 55%),
+    var(--fog);
+}
+
+.gfx-logos-intro {
+  margin-bottom: 2rem;
+}
+
+.gfx-logos-intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+  letter-spacing: 0.02em;
+  margin: 0.35rem 0 0;
+}
+
+.gfx-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.gfx-logo-tile {
+  margin: 0;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.gfx-logo-tile:nth-child(4n) {
+  border-right: none;
+}
+
+.gfx-logo-tile:nth-child(n + 9) {
+  border-bottom: none;
+}
+
+.gfx-logo-tile--paper {
+  background: #fff;
+}
+
+.gfx-logo-tile--fog {
+  background: #ebebeb;
+}
+
+.gfx-logo-tile--warm {
+  background: #58595b;
+}
+
+.gfx-logo-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gfx-logo-grid .gfx-logo-tile {
+  opacity: 0;
+  transform: translateY(0.85rem);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+.gfx-logo-grid .gfx-logo-tile:nth-child(1) { transition-delay: 0.04s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(2) { transition-delay: 0.08s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(3) { transition-delay: 0.12s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(4) { transition-delay: 0.16s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(5) { transition-delay: 0.2s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(6) { transition-delay: 0.24s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(7) { transition-delay: 0.28s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(8) { transition-delay: 0.32s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(9) { transition-delay: 0.36s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(10) { transition-delay: 0.4s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(11) { transition-delay: 0.44s; }
+.gfx-logo-grid .gfx-logo-tile:nth-child(12) { transition-delay: 0.48s; }
+
+.gfx-logo-grid.is-in .gfx-logo-tile {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 960px) {
+  .gfx-logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gfx-logo-tile:nth-child(4n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .gfx-logo-tile:nth-child(3n) {
+    border-right: none;
+  }
+
+  .gfx-logo-tile:nth-child(n + 9) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .gfx-logo-tile:nth-child(n + 10) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .gfx-logos {
+    padding-top: 2.5rem;
+  }
+
+  .gfx-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gfx-logo-tile:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .gfx-logo-tile:nth-child(2n) {
+    border-right: none;
+  }
+
+  .gfx-logo-tile:nth-child(n + 10) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .gfx-logo-tile:nth-child(n + 11) {
+    border-bottom: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gfx-logo-grid .gfx-logo-tile {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
