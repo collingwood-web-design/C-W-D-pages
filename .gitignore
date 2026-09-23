@@ -23,3 +23,4 @@ assets/client logos/
 
 # Scraped / temp reference
 _ref/
+.tmp-gfx-opt/

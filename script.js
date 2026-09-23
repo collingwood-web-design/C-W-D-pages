@@ -99,6 +99,16 @@
       revealLists.forEach((list) => io.observe(list));
     }
   }
+
+  /* Graphics logo mosaic — fade in as each asset arrives */
+  document.querySelectorAll(".gfx-logo-grid img").forEach((img) => {
+    const mark = () => img.classList.add("is-loaded");
+    if (img.complete && img.naturalWidth > 0) mark();
+    else {
+      img.addEventListener("load", mark, { once: true });
+      img.addEventListener("error", mark, { once: true });
+    }
+  });
   /* Cookie banner */
   const COOKIE_KEY = "cwd-cookie-consent";
   if (!localStorage.getItem(COOKIE_KEY)) {
