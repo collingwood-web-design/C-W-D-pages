@@ -1811,22 +1811,22 @@ ul {
 /* Short viewports (tablet landscape chrome) — keep hang in view */
 @media (min-width: 721px) and (max-height: 860px) {
   .graphics-hero {
-    min-height: min(58svh, 28rem);
-    margin-bottom: 5rem;
+    min-height: min(72svh, 38rem);
+    margin-bottom: 4.75rem;
   }
 
   .graphics-hero .hero-media {
-    inset: 0 0 -4.75rem 0;
+    inset: 0 0 -5.25rem 0;
   }
 
   .graphics-hero .page-hero-media-inner {
-    padding-top: 2.75rem;
-    padding-bottom: 2rem;
+    padding-top: 4.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .graphics-hero .hero-media img {
-    object-position: right bottom;
-    transform-origin: 90% 100%;
+    object-position: 88% bottom;
+    transform-origin: 88% 100%;
   }
 
   .graphics-hero .page-hero-media-inner > p:not(.eyebrow) {
