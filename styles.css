@@ -1795,6 +1795,17 @@ ul {
   z-index: 1;
 }
 
+/* Extra air before the Coffee footer after the white services strip */
+.graphics-page > .service-jump:last-of-type {
+  border-bottom: none;
+  padding-top: 1.75rem;
+  padding-bottom: clamp(4rem, 9vw, 6.5rem);
+}
+
+.graphics-page .gfx-do {
+  padding-bottom: clamp(2.75rem, 5vw, 3.75rem);
+}
+
 /* iPad landscape / small desktop — same framing as tablet so feet aren't cropped */
 @media (max-width: 1180px) {
   .graphics-hero {
@@ -1968,10 +1979,6 @@ ul {
 .gfx-logo-grid .gfx-logo-tile:nth-child(10) { transition-delay: 0.4s; }
 .gfx-logo-grid .gfx-logo-tile:nth-child(11) { transition-delay: 0.44s; }
 .gfx-logo-grid .gfx-logo-tile:nth-child(12) { transition-delay: 0.48s; }
-.gfx-logo-grid .gfx-logo-tile:nth-child(13) { transition-delay: 0.52s; }
-.gfx-logo-grid .gfx-logo-tile:nth-child(14) { transition-delay: 0.56s; }
-.gfx-logo-grid .gfx-logo-tile:nth-child(15) { transition-delay: 0.6s; }
-.gfx-logo-grid .gfx-logo-tile:nth-child(16) { transition-delay: 0.64s; }
 
 .gfx-logo-grid.is-in .gfx-logo-tile {
   opacity: 1;
@@ -1984,7 +1991,7 @@ ul {
   }
 }
 
-/* Tablet portrait — swap Ski / Four Winds + Mackenzie / CACE; white Ski; drop Huruma */
+/* Tablet portrait — swap Ski / Four Winds + Mackenzie / CACE; white Ski */
 @media (min-width: 641px) and (max-width: 960px) and (orientation: portrait) {
   .gfx-logo-grid .gfx-logo-tile:nth-child(1) { order: 1; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(2) { order: 2; }
@@ -1998,16 +2005,9 @@ ul {
   .gfx-logo-grid .gfx-logo-tile:nth-child(10) { order: 10; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(11) { order: 11; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(12) { order: 12; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(13) { order: 13; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(14) { order: 14; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(15) { order: 15; }
 
   .gfx-logo-tile--ski {
     background: #fff;
-  }
-
-  .gfx-logo-tile--huruma {
-    display: none;
   }
 }
 
@@ -2028,15 +2028,11 @@ ul {
   .gfx-logo-grid .gfx-logo-tile:nth-child(5) { order: 6; } /* Four Winds ↔ CACE */
   .gfx-logo-grid .gfx-logo-tile:nth-child(6) { order: 5; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(7) { order: 7; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(8) { order: 16; } /* Manery ↔ Hamilton */
+  .gfx-logo-grid .gfx-logo-tile:nth-child(8) { order: 8; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(9) { order: 10; } /* SGBMF ↔ Ontarians */
   .gfx-logo-grid .gfx-logo-tile:nth-child(10) { order: 9; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(11) { order: 12; } /* DDQ ↔ Billie Flynn */
   .gfx-logo-grid .gfx-logo-tile:nth-child(12) { order: 11; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(13) { order: 13; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(14) { order: 14; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(15) { order: 8; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(16) { order: 15; } /* Huruma stays after prior Hamilton swap */
 
   .gfx-logo-tile--cace {
     background: #f1f1f1;
@@ -2118,11 +2114,28 @@ ul {
   overflow: hidden;
 }
 
+.gfx-art-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  width: 100%;
+  align-items: stretch;
+}
+
+.gfx-art-media {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .gfx-art-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   width: 100%;
+}
+
+.gfx-art-grid--tiles {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .gfx-art-intro {
@@ -2133,6 +2146,15 @@ ul {
   padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.15rem, 2.5vw, 2rem);
   background: #fff;
   min-height: 100%;
+}
+
+.gfx-art-grid--tiles > .gfx-art-intro {
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 0;
+  padding: clamp(1.1rem, 2.2vw, 1.75rem) clamp(1rem, 2vw, 1.5rem);
 }
 
 .gfx-art-intro .section-title {
@@ -2164,6 +2186,19 @@ ul {
   background: #fff;
 }
 
+.gfx-art .gfx-apps-tile--fog {
+  background: var(--fog);
+}
+
+.gfx-art .gfx-apps-tile--paper img,
+.gfx-art .gfx-apps-tile--fog img {
+  object-fit: contain;
+}
+
+.gfx-art .gfx-apps-placeholder--light {
+  background: #f2f2f2;
+}
+
 .gfx-art-grid > .gfx-apps-tile {
   opacity: 0;
   transform: translateY(0.65rem);
@@ -2172,24 +2207,72 @@ ul {
     transform 0.7s var(--ease);
 }
 
+.gfx-art-grid--tiles > .gfx-apps-tile:nth-child(2) { transition-delay: 0.06s; }
+.gfx-art-grid--tiles > .gfx-apps-tile:nth-child(3) { transition-delay: 0.12s; }
+.gfx-art-grid--tiles > .gfx-apps-tile:nth-child(4) { transition-delay: 0.18s; }
+.gfx-art-grid--tiles > .gfx-apps-tile:nth-child(5) { transition-delay: 0.24s; }
+.gfx-art-grid--tiles > .gfx-apps-tile:nth-child(6) { transition-delay: 0.3s; }
+.gfx-art-grid--tiles > .gfx-apps-tile:nth-child(7) { transition-delay: 0.36s; }
+
 .gfx-art-grid > .gfx-apps-tile:nth-child(2) { transition-delay: 0.06s; }
 .gfx-art-grid > .gfx-apps-tile:nth-child(3) { transition-delay: 0.12s; }
 .gfx-art-grid > .gfx-apps-tile:nth-child(4) { transition-delay: 0.18s; }
 
-.gfx-art.is-in > .gfx-art-grid > .gfx-apps-tile {
+.gfx-art.is-in .gfx-art-grid > .gfx-apps-tile {
   opacity: 1;
   transform: none;
 }
 
+.gfx-art-grid--tiles .gfx-apps-tile--span2 {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+  align-self: stretch;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+.gfx-art-grid--tiles .gfx-apps-tile--span2 img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+  transform: none;
+}
+
 @media (max-width: 720px) {
+  .gfx-art-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gfx-art-intro {
+    min-height: auto;
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
   .gfx-art-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .gfx-art-intro {
+  .gfx-art-grid--tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gfx-art-grid--tiles > .gfx-art-intro {
     grid-column: 1 / -1;
+    aspect-ratio: auto;
     min-height: auto;
-    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .gfx-art-grid--tiles .gfx-apps-tile--span2 {
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 1;
   }
 }
 
@@ -2198,6 +2281,14 @@ ul {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .gfx-apps-tile--span2 img {
+    transition: none;
+  }
+
+  .gfx-art:not(.gfx-format) .gfx-apps-tile:hover img {
+    transform: none;
   }
 }
 
@@ -2382,8 +2473,8 @@ ul {
     transform: scale(1.25);
   }
 
-  .gfx-apps-tile--what:hover img {
-    transform: scale(1.05);
+  .gfx-art:not(.gfx-format) .gfx-apps-tile:hover img {
+    transform: scale(1.1);
   }
 
   .gfx-format .gfx-apps-tile:hover img,
