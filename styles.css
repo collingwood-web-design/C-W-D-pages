@@ -746,6 +746,14 @@ ul {
 /* Intro */
 .intro {
   background: #fff;
+  overflow: visible;
+  /* Tighter than default .section — sits right under service-jump */
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+.intro > .section-inner {
+  overflow: visible;
 }
 
 .intro-grid {
@@ -793,13 +801,13 @@ ul {
   font-family: var(--font-body);
 }
 
-/* Process orbit diagram */
+/* Process orbit — same balanced grid as before; shift right so labels meet SEO/AEO */
 .cwd-orbit {
   margin: 0;
   width: 100%;
   max-width: none;
   justify-self: end;
-  transform: translateX(2.75rem);
+  transform: translateX(7.25rem);
 }
 
 .cwd-orbit-svg {
@@ -969,26 +977,46 @@ ul {
 }
 
 .service-grid {
-  margin-top: 2.5rem;
+  --service-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  margin-top: 2.75rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem 1.5rem;
+  align-items: stretch;
+}
+
+/* Thin connector behind the four nodes — same language as the orbit track */
+.service-grid::before {
+  content: "";
+  position: absolute;
+  top: 3.85rem;
+  left: 12%;
+  right: 12%;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #d8d8d8 8%,
+    #d8d8d8 92%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .service-grid .service-card {
   opacity: 0;
   transform: translateY(0.85rem);
   transition:
-    opacity 1.1s var(--service-ease, var(--ease)),
-    transform 1.1s var(--service-ease, var(--ease)),
-    box-shadow 0.35s var(--service-ease, var(--ease)),
-    border-color 0.35s var(--service-ease, var(--ease));
+    opacity 1s var(--service-ease),
+    transform 1s var(--service-ease);
 }
 
-.service-grid .service-card:nth-child(1) { transition-delay: 0.08s; }
-.service-grid .service-card:nth-child(2) { transition-delay: 0.22s; }
-.service-grid .service-card:nth-child(3) { transition-delay: 0.36s; }
-.service-grid .service-card:nth-child(4) { transition-delay: 0.5s; }
+.service-grid .service-card:nth-child(1) { transition-delay: 0.06s; }
+.service-grid .service-card:nth-child(2) { transition-delay: 0.16s; }
+.service-grid .service-card:nth-child(3) { transition-delay: 0.26s; }
+.service-grid .service-card:nth-child(4) { transition-delay: 0.36s; }
 
 .service-grid.is-in .service-card {
   opacity: 1;
@@ -1002,152 +1030,115 @@ ul {
   }
 }
 
-/* Touch: keep red accents after scroll-in (hover does nothing on phones) */
-@media (hover: none) {
-  .service-grid.is-in .service-card {
-    border-color: var(--red);
-  }
-
-  .service-grid.is-in .service-card::before {
-    width: 100%;
-  }
-
-  .service-grid.is-in .service-card::after {
-    transform: scaleX(1);
-  }
-
-  .service-grid.is-in .service-index {
-    color: var(--red);
-  }
-
-  .service-grid.is-in .service-motif {
-    opacity: 0.055;
-    transform: translateY(0);
-  }
-}
-
 .service-card {
-  --service-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  border: 1.5px solid rgba(196, 18, 26, 0.55);
-  background: #fff;
-  padding: 1.65rem 1.35rem 1.35rem;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  min-height: 17.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.03);
-  transition:
-    transform 0.35s var(--service-ease),
-    box-shadow 0.35s var(--service-ease),
-    border-color 0.35s var(--service-ease);
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  min-height: 0;
+  overflow: visible;
 }
 
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--red);
-  z-index: 3;
-  transition: width 0.4s var(--service-ease);
-}
-
-.service-card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left center;
-  z-index: 3;
-  transition: transform 0.4s var(--service-ease);
-}
-
-.service-index {
-  position: absolute;
-  top: 0.95rem;
-  right: 1.1rem;
-  z-index: 2;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: rgba(17, 17, 17, 0.28);
-  transition: color 0.3s var(--service-ease);
-}
-
-.service-motif {
-  position: absolute;
-  right: 0.85rem;
-  bottom: 0.35rem;
-  z-index: 0;
-  font-family: var(--font-body);
-  font-size: clamp(3.4rem, 5vw, 4.6rem);
-  font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-  text-transform: lowercase;
-  color: var(--black);
-  opacity: 0.035;
-  pointer-events: none;
-  user-select: none;
-  transform: translateY(0.15rem);
-  transition: opacity 0.35s var(--service-ease), transform 0.45s var(--service-ease);
-}
-
-.service-icon-space {
-  display: block;
-  width: 100%;
-  height: 2.45rem;
-  margin-bottom: 1.15rem;
+.service-node {
+  width: clamp(6.75rem, 10vw, 7.75rem);
+  height: clamp(6.75rem, 10vw, 7.75rem);
+  margin: 0 auto 1rem;
   flex-shrink: 0;
 }
 
-.service-card h3,
-.service-card p,
-.service-extra,
-.service-more {
-  position: relative;
-  z-index: 1;
+.service-node-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 10px 18px rgba(17, 17, 17, 0.08));
+}
+
+.service-node-hub {
+  stroke: #fff;
+  stroke-width: 3;
+  filter: drop-shadow(0 2px 4px rgba(17, 17, 17, 0.06));
+}
+
+.service-node-num {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  fill: #8e1218;
+}
+
+.service-node-spin {
+  transform-origin: 60px 60px;
+  animation: service-node-spin 7s linear infinite;
+}
+
+.service-card:nth-child(2) .service-node-spin { animation-duration: 8s; animation-direction: reverse; }
+.service-card:nth-child(3) .service-node-spin { animation-duration: 6.2s; }
+.service-card:nth-child(4) .service-node-spin { animation-duration: 8.5s; animation-direction: reverse; }
+
+.service-motif {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
 }
 
 .service-card h3 {
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.3;
-  margin-bottom: 0.75rem;
-  padding-inline: 1.5rem;
-  text-align: center;
+  margin: 0 0 0.55rem;
+  max-width: 15.5rem;
 }
 
 .service-card > p {
   font-size: 0.9rem;
   color: var(--muted);
-  flex: 1;
-  text-align: center;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 16rem;
+  flex: 1 1 auto;
+}
+
+.service-extra {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.55;
+  max-width: 16rem;
+}
+
+.service-card.is-open .service-extra {
+  display: block;
 }
 
 .service-more {
-  margin-top: 1.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
+  margin-top: 1.15rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  min-width: 2.35rem;
+  min-height: 2.35rem;
   border-radius: 50%;
   background: var(--red);
   color: #fff;
   display: grid;
   place-items: center;
-  align-self: flex-start;
+  align-self: center;
   overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(196, 18, 26, 0.22);
   transition:
     background 0.25s var(--service-ease),
     transform 0.3s var(--service-ease),
@@ -1165,7 +1156,7 @@ ul {
 }
 
 .service-more-plus {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1;
   font-weight: 500;
 }
@@ -1176,59 +1167,47 @@ ul {
 }
 
 .service-more-arrow svg {
-  width: 0.95rem;
-  height: 0.95rem;
+  width: 0.9rem;
+  height: 0.9rem;
 }
 
-.service-card[open] .service-more,
 .service-card.is-open .service-more {
   background: var(--black);
+  box-shadow: 0 4px 12px rgba(17, 17, 17, 0.2);
 }
 
-.service-extra {
-  display: none;
-  margin-top: 0.75rem;
-  font-size: 0.88rem;
-  color: var(--ink);
+.service-card.is-open .service-node-arc {
+  stroke-dasharray: 0.72 0.28;
 }
 
-.service-card.is-open .service-extra {
-  display: block;
+.service-card.is-open .service-node-spin {
+  animation-duration: 3.2s;
+}
+
+@keyframes service-node-spin {
+  to { transform: rotate(360deg); }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .service-card:hover,
-  .service-card:focus-within {
-    transform: translateY(-5px);
-    border-color: var(--red);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(196, 18, 26, 0.06);
+  .service-card:hover .service-node-svg,
+  .service-card:focus-within .service-node-svg {
+    filter: drop-shadow(0 14px 22px rgba(17, 17, 17, 0.12));
   }
 
-  .service-card:hover::before,
-  .service-card:focus-within::before {
-    width: 100%;
+  .service-card:hover .service-node-spin,
+  .service-card:focus-within .service-node-spin {
+    animation-duration: 3s;
   }
 
-  .service-card:hover::after,
-  .service-card:focus-within::after {
-    transform: scaleX(1);
-  }
-
-  .service-card:hover .service-index,
-  .service-card:focus-within .service-index {
-    color: var(--red);
-  }
-
-  .service-card:hover .service-motif,
-  .service-card:focus-within .service-motif {
-    opacity: 0.055;
-    transform: translateY(0);
+  .service-card:hover .service-node-arc,
+  .service-card:focus-within .service-node-arc {
+    stroke-dasharray: 0.55 0.45;
   }
 
   .service-card:hover .service-more,
   .service-card:focus-within .service-more {
-    transform: scale(1.04);
-    box-shadow: 0 6px 14px rgba(196, 18, 26, 0.28);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(196, 18, 26, 0.3);
   }
 
   .service-card:hover .service-more-plus,
@@ -1244,30 +1223,37 @@ ul {
   }
 }
 
+.service-node-arc {
+  transition: stroke-dasharray 0.45s var(--service-ease);
+}
+
 .service-more:focus-visible {
   outline: 2px solid var(--black);
   outline-offset: 3px;
 }
 
-.service-card:focus-within {
-  border-color: var(--red);
+@media (max-width: 960px) {
+  .service-grid::before {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .service-node-spin {
+    animation: none !important;
+  }
+
   .service-card,
-  .service-card::before,
-  .service-card::after,
-  .service-motif,
-  .service-index,
   .service-more,
   .service-more-plus,
-  .service-more-arrow {
+  .service-more-arrow,
+  .service-node-arc {
     transition: none !important;
   }
 }
 
 .services-banner {
-  margin-top: 1.25rem;
+  margin-top: 2rem;
   background: var(--red);
   color: #fff;
   text-align: center;
