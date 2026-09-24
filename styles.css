@@ -4880,13 +4880,9 @@ ul {
     row-gap: 0;
   }
 
-  /* Keep + with its card; clear air before the next node */
+  /* Keep + with its card; clear air before the next node (2-col only) */
   .service-card {
     padding-bottom: 2.75rem;
-  }
-
-  .service-card:nth-last-child(-n + 2) {
-    padding-bottom: 0.25rem;
   }
 
   .service-more {
@@ -4953,6 +4949,13 @@ ul {
   }
 }
 
+/* Tablet 2-col only: last row needs less bottom pad */
+@media (max-width: 960px) and (min-width: 721px) {
+  .service-card:nth-last-child(-n + 2) {
+    padding-bottom: 0.25rem;
+  }
+}
+
 /* Phone: stack intro */
 @media (max-width: 640px) {
   .intro-grid {
@@ -5000,16 +5003,21 @@ ul {
 
   /* Phone: drop subgrid — fixed stack spacing so + stays even under every card */
   .service-card {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     grid-row: auto;
     height: auto;
-    padding-bottom: 2.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .service-card:nth-last-child(-n + 2),
+  .service-card:last-child {
+    padding-bottom: 2.75rem;
   }
 
   .service-card:last-child {
-    padding-bottom: 0;
+    padding-bottom: 0.15rem;
   }
 
   .service-node {
@@ -5021,7 +5029,7 @@ ul {
   }
 
   .service-copy {
-    flex: 0 0 auto;
+    flex: 0 0 auto !important;
     align-self: center;
     width: 100%;
     max-width: 22rem;
@@ -5041,7 +5049,7 @@ ul {
   }
 
   .service-more {
-    margin-top: 0.85rem;
+    margin-top: 0.85rem !important;
     align-self: center;
     justify-self: auto;
   }
