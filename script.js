@@ -109,6 +109,23 @@
       img.addEventListener("error", mark, { once: true });
     }
   });
+  /* Back to top */
+  const topBtn = document.createElement("button");
+  topBtn.type = "button";
+  topBtn.className = "back-to-top";
+  topBtn.setAttribute("aria-label", "Back to top");
+  topBtn.innerHTML = '<span class="back-to-top__arrow" aria-hidden="true"></span>';
+  document.body.appendChild(topBtn);
+
+  const toggleTopBtn = () => {
+    topBtn.classList.toggle("is-visible", window.scrollY > 420);
+  };
+  toggleTopBtn();
+  window.addEventListener("scroll", toggleTopBtn, { passive: true });
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+
   /* Cookie banner */
   const COOKIE_KEY = "cwd-cookie-consent";
   if (!localStorage.getItem(COOKIE_KEY)) {
