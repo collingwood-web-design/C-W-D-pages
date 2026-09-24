@@ -105,28 +105,144 @@
           <p class="intro-text">We're a full service digital design agency with a passion for creativity, strategy and results. From concept to launch (and long after), we're with you for the long term.</p>
           <a class="btn btn-ghost" href="contact">Let's chat</a>
         </div>
-        <div class="intro-divider" aria-hidden="true">
-          <span class="vertical-word">design</span>
-        </div>
-        <div class="intro-visual">
-          <p class="intro-aside-title"><span>Sharp ideas.</span><span>Perfectly crafted.</span></p>
-          <img src="https://media.cwd-cdn.com/C-W-D/images/perfectly-crafted.jpg" alt="Red pencil sharpener and black computer mouse" width="851" height="573">
-        </div>
+
+        <figure class="cwd-orbit" data-reveal-list aria-label="Our process">
+          <svg class="cwd-orbit-svg" viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <defs>
+              <filter id="cwd-orbit-hub-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#111111" flood-opacity="0.13"/>
+              </filter>
+              <filter id="cwd-orbit-node-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="1" dy="3" stdDeviation="4.5" flood-color="#111111" flood-opacity="0.2"/>
+              </filter>
+              <linearGradient id="cwd-orbit-red-grad" gradientUnits="userSpaceOnUse" x1="230" y1="100" x2="230" y2="460">
+                <stop offset="0%" stop-color="#6b0e12"/>
+                <stop offset="45%" stop-color="#8e1218"/>
+                <stop offset="100%" stop-color="#c4121a"/>
+              </linearGradient>
+              <filter id="cwd-orbit-red-glow" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                <feFlood flood-color="#c4121a" flood-opacity="0.55" result="red"/>
+                <feComposite in="red" in2="blur" operator="in" result="glow"/>
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur2"/>
+                <feFlood flood-color="#ff5a5f" flood-opacity="0.28" result="pink"/>
+                <feComposite in="pink" in2="blur2" operator="in" result="glow2"/>
+                <feMerge>
+                  <feMergeNode in="glow2"/>
+                  <feMergeNode in="glow"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Inner hub (smaller) with clear gap to outer ring -->
+            <circle class="cwd-orbit-hub-fill" cx="230" cy="280" r="128" fill="#fff" filter="url(#cwd-orbit-hub-shadow)"/>
+            <!-- Hub rim: grey track + glowing dark→red gradient arc -->
+            <circle class="cwd-orbit-hub-rim" cx="230" cy="280" r="128" fill="none" stroke="#e8e8e8" stroke-width="11"/>
+            <path class="cwd-orbit-hub-progress" pathLength="1" fill="none" stroke="url(#cwd-orbit-red-grad)" stroke-width="11" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" filter="url(#cwd-orbit-red-glow)"
+              d="M 230 152 A 128 128 0 0 1 358 280 A 128 128 0 0 1 230 408"/>
+
+            <!-- Outer ring -->
+            <circle class="cwd-orbit-hub-track" cx="230" cy="280" r="188" fill="none" stroke="#e4e4e4" stroke-width="2.25"/>
+            <path class="cwd-orbit-arc cwd-orbit-arc--1" pathLength="1" fill="none" stroke="url(#cwd-orbit-red-grad)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1"
+              d="M 230 92 A 188 188 0 0 1 418 280 A 188 188 0 0 1 230 468"/>
+            <circle class="cwd-orbit-arc-end cwd-orbit-arc-end--start" cx="230" cy="92" r="3.5" fill="#8e1218"/>
+            <circle class="cwd-orbit-arc-end cwd-orbit-arc-end--end" cx="230" cy="468" r="3.5" fill="#c4121a"/>
+
+            <g class="cwd-orbit-brand" text-anchor="middle" font-family="Lato, Helvetica, Arial, sans-serif">
+              <text class="cwd-orbit-mark" x="230" y="262" font-size="52" font-weight="900" letter-spacing="0.1em">
+                <tspan fill="#1a1a1a">C</tspan><tspan fill="#c4121a">W</tspan><tspan fill="#1a1a1a">D</tspan>
+              </text>
+              <line class="cwd-orbit-rule" x1="211" y1="278" x2="249" y2="278" stroke="#c4121a" stroke-width="2.4" stroke-linecap="round"/>
+              <text class="cwd-orbit-tag" x="230" y="302" fill="#6a6a6a" font-size="15" font-weight="400">
+                <tspan x="230" dy="0">Discover. Define.</tspan>
+                <tspan x="230" dy="1.35em">Design. Deliver.</tspan>
+              </text>
+            </g>
+
+            <!-- Connectors under nodes -->
+            <g class="cwd-orbit-connectors" stroke="#c4121a" stroke-width="1.4">
+              <line class="cwd-orbit-link" x1="317.5" y1="103.4" x2="448" y2="103.4"/>
+              <line class="cwd-orbit-link" x1="407.2" y1="172.2" x2="448" y2="172.2"/>
+              <line class="cwd-orbit-link" x1="441.2" y1="280" x2="448" y2="280"/>
+              <line class="cwd-orbit-link" x1="407.2" y1="387.8" x2="448" y2="387.8"/>
+              <line class="cwd-orbit-link" x1="317.5" y1="456.6" x2="448" y2="456.6"/>
+            </g>
+
+            <!-- Nodes: white border ring + soft outer shadow (matches original detail) -->
+            <g class="cwd-orbit-nodes">
+              <g class="cwd-orbit-node" filter="url(#cwd-orbit-node-shadow)">
+                <circle cx="294.3" cy="103.4" r="22.5" fill="#fff"/>
+                <circle cx="294.3" cy="103.4" r="17.5" fill="#8e1218"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-orbit-node-shadow)">
+                <circle cx="384.0" cy="172.2" r="22.5" fill="#fff"/>
+                <circle cx="384.0" cy="172.2" r="17.5" fill="#f0f0f0"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-orbit-node-shadow)">
+                <circle cx="418" cy="280" r="22.5" fill="#fff"/>
+                <circle cx="418" cy="280" r="17.5" fill="#c4121a"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-orbit-node-shadow)">
+                <circle cx="384.0" cy="387.8" r="22.5" fill="#fff"/>
+                <circle cx="384.0" cy="387.8" r="17.5" fill="#f0f0f0"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-orbit-node-shadow)">
+                <circle cx="294.3" cy="456.6" r="22.5" fill="#fff"/>
+                <circle cx="294.3" cy="456.6" r="17.5" fill="#c4121a"/>
+              </g>
+            </g>
+
+            <g class="cwd-orbit-nums" text-anchor="middle" dominant-baseline="central" font-family="Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700">
+              <text class="cwd-orbit-num" x="294.3" y="103.4" fill="#fff">01</text>
+              <text class="cwd-orbit-num" x="384.0" y="172.2" fill="#8e1218">02</text>
+              <text class="cwd-orbit-num" x="418" y="280" fill="#fff">03</text>
+              <text class="cwd-orbit-num" x="384.0" y="387.8" fill="#222">04</text>
+              <text class="cwd-orbit-num" x="294.3" y="456.6" fill="#fff">05</text>
+            </g>
+
+            <!-- Titles + 2-line descriptions (narrower column → bigger circle) -->
+            <g class="cwd-orbit-labels" font-family="Lato, Helvetica, Arial, sans-serif">
+              <g class="cwd-orbit-step">
+                <text x="460" y="96" fill="#222" font-size="14" font-weight="800" letter-spacing="0.12em">DISCOVER</text>
+                <text x="460" y="116" fill="#6e6e6e" font-size="13">
+                  <tspan x="460" dy="0">Understand your goals</tspan>
+                  <tspan x="460" dy="1.25em">and opportunities.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="460" y="165" fill="#222" font-size="14" font-weight="800" letter-spacing="0.12em">DEFINE</text>
+                <text x="460" y="185" fill="#6e6e6e" font-size="13">
+                  <tspan x="460" dy="0">Shape the strategy</tspan>
+                  <tspan x="460" dy="1.25em">and plan.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="460" y="272" fill="#222" font-size="14" font-weight="800" letter-spacing="0.12em">DESIGN</text>
+                <text x="460" y="292" fill="#6e6e6e" font-size="13">
+                  <tspan x="460" dy="0">Create a look and experience</tspan>
+                  <tspan x="460" dy="1.25em">that fits your business.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="460" y="380" fill="#222" font-size="14" font-weight="800" letter-spacing="0.12em">DEVELOP</text>
+                <text x="460" y="400" fill="#6e6e6e" font-size="13">
+                  <tspan x="460" dy="0">Build a fast, secure and</tspan>
+                  <tspan x="460" dy="1.25em">future-ready site.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="460" y="449" fill="#222" font-size="14" font-weight="800" letter-spacing="0.12em">DELIVER</text>
+                <text x="460" y="469" fill="#6e6e6e" font-size="13">
+                  <tspan x="460" dy="0">Launch and support your</tspan>
+                  <tspan x="460" dy="1.25em">ongoing success.</tspan>
+                </text>
+              </g>
+            </g>
+          </svg>
+        </figure>
       </div>
     </section>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
-      </div>
-    </div>
 
     <section class="section services" aria-labelledby="services-title">
       <div class="section-inner section-center">
@@ -261,6 +377,19 @@
       </div>
     </section>
 
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+        <span class="ticker-item"><img class="maple" src="https://media.cwd-cdn.com/C-W-D/images/maple-leaf-white-v2.png" alt="" width="22" height="23"> Let's build something great</span>
+      </div>
+    </div>
+
     <section class="section proof" aria-labelledby="clients-title">
       <div class="section-inner">
         <div class="proof-intro section-center">
@@ -326,6 +455,10 @@
 
         <div class="wd-process-body">
           <div class="wd-process-track" aria-hidden="true">
+            <span class="wd-process-track__line"></span>
+            <span class="wd-process-track__glow"></span>
+          </div>
+          <div class="wd-process-track wd-process-track--right" aria-hidden="true">
             <span class="wd-process-track__line"></span>
             <span class="wd-process-track__glow"></span>
           </div>
