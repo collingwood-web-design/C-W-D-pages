@@ -1090,8 +1090,11 @@ ul {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--red);
-  align-self: start;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
 }
 
 .service-copy {
@@ -5026,6 +5029,9 @@ ul {
 
   .service-motif {
     margin: 0 0 0.4rem;
+    align-self: center;
+    text-align: center;
+    width: 100%;
   }
 
   .service-copy {
