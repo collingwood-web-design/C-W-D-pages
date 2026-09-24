@@ -1033,9 +1033,10 @@ ul {
 .service-card {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  justify-items: center;
   text-align: center;
   background: transparent;
   border: 0;
@@ -1049,7 +1050,7 @@ ul {
   width: clamp(6.75rem, 10vw, 7.75rem);
   height: clamp(6.75rem, 10vw, 7.75rem);
   margin: 0 auto 1rem;
-  flex-shrink: 0;
+  align-self: start;
 }
 
 .service-node-svg {
@@ -1090,9 +1091,19 @@ ul {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--red);
+  align-self: start;
 }
 
-.service-card h3 {
+.service-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 16rem;
+  align-self: stretch;
+}
+
+.service-copy h3 {
   font-size: 0.86rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -1100,15 +1111,17 @@ ul {
   line-height: 1.3;
   margin: 0 0 0.55rem;
   max-width: 15.5rem;
+  /* Lock all headings to a shared two-line band */
+  min-height: calc(1.3em * 2);
+  width: 100%;
 }
 
-.service-card > p {
+.service-copy > p {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.55;
   margin: 0;
-  max-width: 16rem;
-  flex: 1 1 auto;
+  width: 100%;
 }
 
 .service-extra {
@@ -1117,7 +1130,7 @@ ul {
   font-size: 0.88rem;
   color: var(--ink);
   line-height: 1.55;
-  max-width: 16rem;
+  width: 100%;
 }
 
 .service-card.is-open .service-extra {
@@ -1135,7 +1148,8 @@ ul {
   color: #fff;
   display: grid;
   place-items: center;
-  align-self: center;
+  align-self: end;
+  justify-self: center;
   overflow: hidden;
   border: 2px solid #fff;
   box-shadow: 0 4px 12px rgba(196, 18, 26, 0.22);
@@ -1143,6 +1157,26 @@ ul {
     background 0.25s var(--service-ease),
     transform 0.3s var(--service-ease),
     box-shadow 0.3s var(--service-ease);
+}
+
+/* Fallback when subgrid isn’t available */
+@supports not (grid-template-rows: subgrid) {
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    grid-row: auto;
+  }
+
+  .service-copy {
+    flex: 1 1 auto;
+  }
+
+  .service-more {
+    margin-top: auto;
+    align-self: center;
+  }
 }
 
 .service-more-plus,
