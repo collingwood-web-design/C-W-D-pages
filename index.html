@@ -244,6 +244,133 @@
       </div>
     </section>
 
+    <section class="section intro intro--half" aria-labelledby="intro-title-2">
+      <div class="section-inner intro-grid">
+        <div class="intro-copy">
+          <p class="eyebrow">Hello. We're CWD.</p>
+          <h2 id="intro-title-2">Smart ideas.<br>Serious impact.</h2>
+          <p class="intro-text">We're a full service digital design agency with a passion for creativity, strategy and results. From concept to launch (and long after), we're with you for the long term.</p>
+          <a class="btn btn-ghost" href="contact">Let's chat</a>
+        </div>
+
+        <figure class="cwd-orbit cwd-orbit--half" data-reveal-list aria-label="Our process">
+          <svg class="cwd-orbit-svg" viewBox="0 20 720 560" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <defs>
+              <linearGradient id="cwd-half-red-grad" gradientUnits="userSpaceOnUse" x1="160" y1="50" x2="160" y2="550">
+                <stop offset="0%" stop-color="#6b0e12"/>
+                <stop offset="45%" stop-color="#8e1218"/>
+                <stop offset="100%" stop-color="#c4121a"/>
+              </linearGradient>
+              <filter id="cwd-half-red-glow" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+                <feFlood flood-color="#c4121a" flood-opacity="0.55" result="red"/>
+                <feComposite in="red" in2="blur" operator="in" result="glow"/>
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2"/>
+                <feFlood flood-color="#ff5a5f" flood-opacity="0.28" result="pink"/>
+                <feComposite in="pink" in2="blur2" operator="in" result="glow2"/>
+                <feMerge>
+                  <feMergeNode in="glow2"/>
+                  <feMergeNode in="glow"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <filter id="cwd-half-node-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="1" dy="3" stdDeviation="4.5" flood-color="#111111" flood-opacity="0.2"/>
+              </filter>
+            </defs>
+
+            <!-- Inner thick glow arc (half-circle, open to the right) -->
+            <path class="cwd-orbit-hub-progress" pathLength="1" fill="none" stroke="url(#cwd-half-red-grad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" filter="url(#cwd-half-red-glow)"
+              d="M 160 78 A 222 222 0 0 1 160 522"/>
+
+            <!-- Outer thin track through nodes -->
+            <path class="cwd-orbit-arc cwd-orbit-arc--1" pathLength="1" fill="none" stroke="url(#cwd-half-red-grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1"
+              d="M 160 50 A 250 250 0 0 1 160 550"/>
+
+            <!-- Connectors -->
+            <g class="cwd-orbit-connectors" stroke="#c4121a" stroke-width="1.6">
+              <line class="cwd-orbit-link" x1="182" y1="50" x2="455" y2="50"/>
+              <line class="cwd-orbit-link" x1="358" y1="123.2" x2="455" y2="123.2"/>
+              <line class="cwd-orbit-link" x1="432" y1="300" x2="455" y2="300"/>
+              <line class="cwd-orbit-link" x1="358" y1="476.8" x2="455" y2="476.8"/>
+              <line class="cwd-orbit-link" x1="182" y1="550" x2="455" y2="550"/>
+            </g>
+
+            <!-- Nodes -->
+            <g class="cwd-orbit-nodes">
+              <g class="cwd-orbit-node" filter="url(#cwd-half-node-shadow)">
+                <circle cx="160" cy="50" r="26" fill="#fff"/>
+                <circle cx="160" cy="50" r="20" fill="#8e1218"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-half-node-shadow)">
+                <circle cx="336.8" cy="123.2" r="26" fill="#fff"/>
+                <circle cx="336.8" cy="123.2" r="20" fill="#fff" stroke="#c4121a" stroke-width="2"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-half-node-shadow)">
+                <circle cx="410" cy="300" r="26" fill="#fff"/>
+                <circle cx="410" cy="300" r="20" fill="#c4121a"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-half-node-shadow)">
+                <circle cx="336.8" cy="476.8" r="26" fill="#fff"/>
+                <circle cx="336.8" cy="476.8" r="20" fill="#fff" stroke="#c4121a" stroke-width="2"/>
+              </g>
+              <g class="cwd-orbit-node" filter="url(#cwd-half-node-shadow)">
+                <circle cx="160" cy="550" r="26" fill="#fff"/>
+                <circle cx="160" cy="550" r="20" fill="#c4121a"/>
+              </g>
+            </g>
+
+            <g class="cwd-orbit-nums" text-anchor="middle" dominant-baseline="central" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" font-weight="700">
+              <text class="cwd-orbit-num" x="160" y="50" fill="#fff">01</text>
+              <text class="cwd-orbit-num" x="336.8" y="123.2" fill="#8e1218">02</text>
+              <text class="cwd-orbit-num" x="410" y="300" fill="#fff">03</text>
+              <text class="cwd-orbit-num" x="336.8" y="476.8" fill="#8e1218">04</text>
+              <text class="cwd-orbit-num" x="160" y="550" fill="#fff">05</text>
+            </g>
+
+            <!-- Left-aligned labels — larger type for readability test -->
+            <g class="cwd-orbit-labels" font-family="Lato, Helvetica, Arial, sans-serif">
+              <g class="cwd-orbit-step">
+                <text x="468" y="44" fill="#222" font-size="18" font-weight="800" letter-spacing="0.1em">DISCOVER</text>
+                <text x="468" y="68" fill="#6e6e6e" font-size="15">
+                  <tspan x="468" dy="0">Understand your goals</tspan>
+                  <tspan x="468" dy="1.25em">and opportunities.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="468" y="117" fill="#222" font-size="18" font-weight="800" letter-spacing="0.1em">DEFINE</text>
+                <text x="468" y="141" fill="#6e6e6e" font-size="15">
+                  <tspan x="468" dy="0">Shape the strategy</tspan>
+                  <tspan x="468" dy="1.25em">and plan.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="468" y="294" fill="#222" font-size="18" font-weight="800" letter-spacing="0.1em">DESIGN</text>
+                <text x="468" y="318" fill="#6e6e6e" font-size="15">
+                  <tspan x="468" dy="0">Create a look and experience</tspan>
+                  <tspan x="468" dy="1.25em">that fits your business.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="468" y="471" fill="#222" font-size="18" font-weight="800" letter-spacing="0.1em">DEVELOP</text>
+                <text x="468" y="495" fill="#6e6e6e" font-size="15">
+                  <tspan x="468" dy="0">Build a fast, secure and</tspan>
+                  <tspan x="468" dy="1.25em">future-ready site.</tspan>
+                </text>
+              </g>
+              <g class="cwd-orbit-step">
+                <text x="468" y="544" fill="#222" font-size="18" font-weight="800" letter-spacing="0.1em">DELIVER</text>
+                <text x="468" y="568" fill="#6e6e6e" font-size="15">
+                  <tspan x="468" dy="0">Launch and support your</tspan>
+                  <tspan x="468" dy="1.25em">ongoing success.</tspan>
+                </text>
+              </g>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
     <section class="section services" aria-labelledby="services-title">
       <div class="section-inner section-center">
         <p class="eyebrow">Full service digital</p>

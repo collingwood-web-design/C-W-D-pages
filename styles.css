@@ -817,6 +817,31 @@ ul {
   overflow: visible;
 }
 
+/* Half-circle process — maximized for readability A/B */
+.intro--half {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.intro--half .intro-grid {
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 1.9fr);
+  gap: 1.5rem 1rem;
+  align-items: center;
+}
+
+.intro--half .cwd-orbit--half {
+  justify-self: stretch;
+  transform: none;
+  width: 100%;
+  max-width: none;
+  margin-right: -0.5rem;
+}
+
+.intro--half .cwd-orbit-svg {
+  width: 100%;
+  height: auto;
+}
+
 .cwd-orbit-hub-fill,
 .cwd-orbit-brand,
 .cwd-orbit-hub-rim,
@@ -4940,6 +4965,10 @@ ul {
     transform: none;
   }
 
+  .intro--half .intro-grid {
+    grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  }
+
   .contact-layout,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -4969,6 +4998,16 @@ ul {
     justify-self: center;
     max-width: 34rem;
     transform: none;
+  }
+
+  .intro--half .intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro--half .cwd-orbit--half {
+    margin-right: 0;
+    max-width: none;
+    width: 100%;
   }
 }
 
