@@ -4354,6 +4354,42 @@ a.service-more .service-more-arrow {
   filter: grayscale(1);
 }
 
+.contact-security {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  padding-top: 3rem;
+  padding-bottom: 3.25rem;
+}
+
+.contact-security-inner {
+  max-width: 40rem;
+}
+
+.contact-security h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0.35rem 0 1rem;
+  color: var(--ink);
+}
+
+.contact-security p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.contact-security p + p {
+  margin-top: 0.85rem;
+}
+
+.contact-security strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .contact-aside-title {
   margin: 0.35rem 0 1rem;
 }
