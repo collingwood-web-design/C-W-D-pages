@@ -162,4 +162,39 @@
       if (event.target === lightbox) lightbox.close();
     });
   }
+
+  /* Pulsing tip / note panels */
+  const closePulseTip = (tip) => {
+    const btn = tip.querySelector(".wd-pulse-tip__btn");
+    const panel = tip.querySelector(".wd-pulse-tip__panel");
+    if (!btn || !panel) return;
+    btn.setAttribute("aria-expanded", "false");
+    panel.hidden = true;
+  };
+
+  document.querySelectorAll(".wd-pulse-tip").forEach((tip) => {
+    const btn = tip.querySelector(".wd-pulse-tip__btn");
+    const panel = tip.querySelector(".wd-pulse-tip__panel");
+    if (!btn || !panel) return;
+
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const open = btn.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".wd-pulse-tip").forEach((other) => {
+        if (other !== tip) closePulseTip(other);
+      });
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+      panel.hidden = open;
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".wd-pulse-tip")) return;
+    document.querySelectorAll(".wd-pulse-tip").forEach(closePulseTip);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll(".wd-pulse-tip").forEach(closePulseTip);
+  });
 })();

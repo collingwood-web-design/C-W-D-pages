@@ -3115,6 +3115,18 @@ a.service-more .service-more-arrow {
 
 .wd-selected-item {
   min-width: 0;
+  position: relative;
+}
+
+.wd-selected-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.wd-selected-meta .wd-selected-name {
+  margin: 0;
 }
 
 .wd-selected-name {
@@ -3125,6 +3137,112 @@ a.service-more .service-more-arrow {
   letter-spacing: 0.01em;
   line-height: 1.25;
   color: var(--ink);
+}
+
+.wd-pulse-tip {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.wd-pulse-tip__btn {
+  position: relative;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.wd-pulse-tip__dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 3px rgba(196, 18, 26, 0.18);
+}
+
+.wd-pulse-tip__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px solid var(--red);
+  opacity: 0.55;
+  animation: wd-pulse-ring 2s var(--ease) infinite;
+  pointer-events: none;
+}
+
+.wd-pulse-tip__btn:hover .wd-pulse-tip__dot,
+.wd-pulse-tip__btn:focus-visible .wd-pulse-tip__dot,
+.wd-pulse-tip__btn[aria-expanded="true"] .wd-pulse-tip__dot {
+  background: var(--red-deep);
+}
+
+.wd-pulse-tip__btn:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.wd-pulse-tip__panel {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.85rem);
+  transform: translateX(-50%);
+  width: min(21rem, calc(100vw - 2.5rem));
+  padding: 1.05rem 1.15rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.12);
+  z-index: 5;
+  text-align: left;
+}
+
+.wd-pulse-tip__panel::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--paper);
+  filter: drop-shadow(0 1px 0 var(--line));
+}
+
+.wd-pulse-tip__panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.wd-pulse-tip__panel p + p {
+  margin-top: 0.7rem;
+}
+
+@keyframes wd-pulse-ring {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.65;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-pulse-tip__ring {
+    animation: none;
+    opacity: 0.35;
+  }
 }
 
 .wd-selected-arrow {
@@ -3899,6 +4017,14 @@ a.service-more .service-more-arrow {
   font-weight: 700;
 }
 
+.case-study-punch--outro {
+  margin: 2.25rem 0 0;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
 .case-study-story-copy a {
   color: var(--red);
   font-weight: 700;
@@ -4059,6 +4185,11 @@ a.service-more .service-more-arrow {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem 2.75rem;
     align-items: center;
+  }
+
+  .case-study-story--solo,
+  .case-study-result--solo {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
