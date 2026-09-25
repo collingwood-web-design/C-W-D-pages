@@ -3266,14 +3266,23 @@ a.service-more .service-more-arrow {
 }
 
 .wd-selected-arrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-top: 0.35rem;
   color: var(--red);
-  font-size: 1.35rem;
-  font-weight: 700;
   line-height: 1;
   text-decoration: none;
   transition: transform 0.25s var(--ease);
+}
+
+.wd-selected-arrow__icon {
+  display: block;
+}
+
+.wd-selected-arrow__icon svg {
+  display: block;
+  width: 2.5rem;
+  height: 0.75rem;
 }
 
 .wd-selected-arrow:hover,
