@@ -72,6 +72,26 @@ ul {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  z-index: 200;
+  padding: 0.65rem 1rem;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 0.2s var(--ease);
+}
+
+.skip-link:focus {
+  transform: translateY(0.75rem);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 /* —— Header —— */
 .site-header {
   position: sticky;
