@@ -767,6 +767,7 @@ ul {
 .intro {
   background: #fff;
   overflow: visible;
+  overflow-x: clip;
   /* Tighter than default .section — sits right under service-jump */
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
@@ -1545,6 +1546,7 @@ a.service-more .service-more-arrow {
   border-top: 1px solid var(--line);
   padding-left: 0;
   padding-right: 0;
+  overflow-x: clip;
 }
 
 .proof > .section-inner {
@@ -4937,6 +4939,8 @@ a.service-more .service-more-arrow {
 }
 
 .about-frame--skye {
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 16 / 9;
   min-height: 16rem;
 }
@@ -5162,6 +5166,9 @@ a.service-more .service-more-arrow {
   .about-frame--hero {
     max-height: none;
     order: -1;
+  }
+  .about-frame--skye {
+    min-height: 0;
   }
   .about-script--place {
     justify-self: start;
@@ -5853,6 +5860,7 @@ a.service-more .service-more-arrow {
   background: var(--fog);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  overflow-x: clip;
 }
 
 .seo-text-link {
