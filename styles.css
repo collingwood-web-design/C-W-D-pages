@@ -1871,36 +1871,31 @@ a.service-more .service-more-arrow {
   }
 }
 
-/* Graphics hero — figure hangs over the jump bar */
+/* Graphics hero */
 .graphics-page {
   overflow-x: clip;
 }
 
 .graphics-hero {
-  overflow: visible;
-  z-index: 2;
-  min-height: min(78vh, 42rem);
-  margin-bottom: 4.5rem;
   background: #000;
 }
 
 .graphics-hero .hero-media {
-  /* Taller than the band so feet can hang; overflow clips side spill from Ken Burns */
-  inset: 0 0 -5.5rem 0;
   overflow: hidden;
   z-index: 0;
-  background: transparent;
 }
 
-.graphics-hero .hero-media img {
-  object-fit: cover;
-  object-position: 78% bottom;
+.graphics-hero .hero-media picture {
+  display: block;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  transform-origin: 78% 100%;
+}
+
+/* Figure sits right; feet near the bottom — anchor low so they stay in frame */
+.graphics-hero .hero-media img {
+  object-fit: cover;
+  object-position: 75% 85%;
+  transform-origin: 75% 85%;
   transform: scale3d(1.12, 1.12, 1);
   animation: heroKenBurnsGraphics 12s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   will-change: transform;
@@ -1937,17 +1932,8 @@ a.service-more .service-more-arrow {
   z-index: 2;
 }
 
-.graphics-hero .page-hero-media-inner {
-  padding-top: 6.25rem;
-}
-
 .graphics-hero .page-hero-line {
   white-space: normal;
-}
-
-.graphics-page .service-jump {
-  position: relative;
-  z-index: 1;
 }
 
 /* Extra air before the Coffee footer after the white services strip */
@@ -1961,67 +1947,24 @@ a.service-more .service-more-arrow {
   padding-bottom: clamp(2.75rem, 5vw, 3.75rem);
 }
 
-/* iPad landscape / small desktop — same framing as tablet so feet aren't cropped */
-@media (max-width: 1180px) {
-  .graphics-hero {
-    min-height: min(74svh, 37rem);
-    margin-bottom: 3.5rem;
-  }
-
-  .graphics-hero .hero-media {
-    inset: 0 0 -4.25rem 0;
-  }
-
-  .graphics-hero .page-hero-media-inner {
-    padding-top: 3.5rem;
-  }
-
+@media (max-width: 960px) {
   .graphics-hero .hero-media img {
-    object-position: 88% bottom;
-    transform-origin: 88% 100%;
-  }
-}
-
-/* Short viewports (tablet landscape chrome) — keep hang in view */
-@media (min-width: 721px) and (max-height: 860px) {
-  .graphics-hero {
-    min-height: min(72svh, 38rem);
-    margin-bottom: 4.75rem;
-  }
-
-  .graphics-hero .hero-media {
-    inset: 0 0 -5.25rem 0;
-  }
-
-  .graphics-hero .page-hero-media-inner {
-    padding-top: 4.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .graphics-hero .hero-media img {
-    object-position: 88% bottom;
-    transform-origin: 88% 100%;
+    object-position: 80% 85%;
+    transform-origin: 80% 85%;
   }
 }
 
 @media (max-width: 720px) {
-  .graphics-hero {
-    min-height: min(66svh, 30rem);
-    margin-bottom: 3rem;
-    align-items: end;
-  }
-
-  .graphics-hero .hero-media {
-    inset: 0 0 -3.25rem 0;
-  }
-
-  .graphics-hero .page-hero-media-inner {
-    padding-top: 2.85rem;
-  }
-
   .graphics-hero .hero-media img {
-    object-position: 92% bottom;
-    transform-origin: 92% 100%;
+    object-position: 84% 85%;
+    transform-origin: 84% 85%;
+  }
+}
+
+@media (max-width: 960px) and (orientation: portrait) {
+  .graphics-hero .hero-media img {
+    object-position: 88% 85%;
+    transform-origin: 88% 85%;
   }
 }
 
@@ -4326,28 +4269,45 @@ a.service-more .service-more-arrow {
 }
 
 /* Contact form */
-.contact-hero {
-  background: #111;
-  line-height: 0;
-}
-
-.contact-hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .contact-section {
   background: var(--fog);
-  border-top: 1px solid var(--line);
   padding-bottom: 6.5rem;
 }
 
 .contact-layout {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
+  grid-template-rows: auto 1fr;
   gap: 2.5rem 3.5rem;
   align-items: start;
+}
+
+.contact-aside {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.contact-layout > .contact-panel {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.contact-photo {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: stretch;
+  margin: 0;
+  min-height: 16rem;
+  overflow: hidden;
+  background: #2a2a2e;
+}
+
+.contact-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 46% center;
 }
 
 .contact-map {
@@ -4403,6 +4363,11 @@ a.service-more .service-more-arrow {
 
 .contact-aside-title {
   margin: 0.35rem 0 1rem;
+}
+
+h1.contact-aside-title {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  line-height: 1.05;
 }
 
 .contact-aside-lead {
@@ -5169,6 +5134,19 @@ a.service-more .service-more-arrow {
   }
   .about-frame--skye {
     min-height: 0;
+  }
+  .contact-layout {
+    grid-template-rows: none;
+  }
+  .contact-aside,
+  .contact-layout > .contact-panel,
+  .contact-photo {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .contact-photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
   .about-script--place {
     justify-self: start;

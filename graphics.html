@@ -32,7 +32,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260926a">
+  <link rel="stylesheet" href="styles.css?v=20260927e">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,19 +70,27 @@
   <main id="main" class="graphics-page">
     <section class="hero page-hero-media graphics-hero" aria-label="Graphics">
       <div class="hero-media">
-        <img
-          src="https://media.cwd-cdn.com/C-W-D/images/cwd-graphics-hero-2.png"
-          alt="Graphic design work by Collingwood Web Design"
-          width="1450"
-          height="1215"
-          fetchpriority="high"
-          decoding="async"
-        >
+        <picture>
+          <source
+            media="(max-width: 960px) and (orientation: portrait)"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/cwd-graphics-hero-3-small.jpg"
+            width="1080"
+            height="1350"
+          >
+          <img
+            src="https://media.cwd-cdn.com/C-W-D/images/cwd-graphics-hero-3.jpg"
+            alt="Illustration of a woman with curly red hair sitting barefoot in a red spotlight"
+            width="1448"
+            height="1086"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
       </div>
       <div class="hero-inner page-hero-media-inner">
         <p class="eyebrow">Graphics</p>
         <h1><span class="page-hero-line">Make them look</span><br><span class="page-hero-line">twice.</span></h1>
-        <p>Logos, branding and artwork that stick.</p>
+        <p>Logos, branding and artwork people remember.</p>
         <ul class="hero-tags" aria-label="Services">
           <li>Web Design</li>
           <li>Development</li>
