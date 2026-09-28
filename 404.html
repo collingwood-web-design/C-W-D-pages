@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      var base = "/";
+      if (/\.github\.io$/i.test(location.hostname)) {
+        var repo = location.pathname.split("/")[1];
+        if (repo) base = "/" + repo + "/";
+      }
+      var el = document.createElement("base");
+      el.href = base;
+      document.head.appendChild(el);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Collingwood Web Design</title>
+  <meta name="description" content="Sorry, we couldn't find that page. Head back to Collingwood Web Design's home page or explore our web design, graphics and SEO services.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=20260928a">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="./" aria-label="Collingwood Web Design home">
+        <span class="logo-strong">COLLINGWOOD</span>
+        <span class="logo-rest"><span class="logo-web">web</span><span class="logo-design">design</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="web-design">Web Design</a></li>
+          <li><a href="graphics">Graphics</a></li>
+          <li><a href="seo">SEO / AEO</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero notfound-hero">
+      <div class="section-inner">
+        <p class="eyebrow">Error 404</p>
+        <h1>This page took a coffee break.</h1>
+        <p>The link may be out of date, or the page may have moved. Let's get you back on track.</p>
+        <div class="notfound-actions">
+          <a class="btn btn-fill-red" href="./">Back to home</a>
+          <a class="btn btn-hero" href="contact">Contact us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notfound-help" aria-labelledby="notfound-help-title">
+      <div class="section-inner">
+        <p class="eyebrow">Popular pages</p>
+        <h2 id="notfound-help-title">Looking for something?</h2>
+        <ul class="notfound-links">
+          <li><a href="web-design"><strong>Web Design</strong><span>Custom websites and selected work</span></a></li>
+          <li><a href="graphics"><strong>Graphics</strong><span>Logos, branding and artwork</span></a></li>
+          <li><a href="seo"><strong>SEO / AEO</strong><span>Get found in search and AI answers</span></a></li>
+          <li><a href="about"><strong>About</strong><span>Meet John, Judy and Skye</span></a></li>
+          <li><a href="tropisch-tours"><strong>Case studies</strong><span>Tropisch Tours, Brown China Letters and more</span></a></li>
+          <li><a href="contact"><strong>Contact</strong><span>705 446 9696 or send us a message</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="legal-bar">
+      <div class="legal-inner">
+        <p>&copy; Copyright <span data-year></span> &middot; Collingwood Web Design</p>
+        <div class="legal-links">
+          <a href="privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
