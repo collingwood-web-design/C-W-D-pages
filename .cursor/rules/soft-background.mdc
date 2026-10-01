@@ -1,0 +1,17 @@
+---
+description: Soft background colour token for CWD site sections
+globs: "{*.html,styles.css}"
+alwaysApply: false
+---
+
+# Soft background colour
+
+When the user says **soft background** or **soft background colour**, use the home services-band grey:
+
+```css
+background: var(--fog); /* #f5f5f5 */
+```
+
+Reference: home `.services` section (yellow asterisk / “Strategic thinking…”).
+
+Do not use `#fafafa`, pure white, or other greys unless explicitly asked.
