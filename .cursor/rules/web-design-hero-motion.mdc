@@ -1,0 +1,33 @@
+---
+description: Approved full-bleed hero Ken Burns motion for CWD site heroes
+globs: "{index,web-design,seo,graphics,about,contact}.html,styles.css"
+alwaysApply: false
+---
+
+# Full-bleed hero motion (approved)
+
+Use this Ken Burns on home, Web Design, SEO / AEO, and any future similar full-bleed media heroes. Do not change without asking.
+
+```css
+.hero-media img,
+.page-hero-media .hero-media img {
+  transform: scale3d(1.16, 1.16, 1);
+  animation: heroKenBurns 12s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale3d(1.2, 1.2, 1) translate3d(1.5%, 0.5%, 0);
+  }
+  to {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+}
+```
+
+- **12s**, ease `cubic-bezier(0.22, 0.61, 0.36, 1)`
+- Scale **1.2 → 1** with light pan `translate3d(1.5%, 0.5%, 0)`
+- Markup: `.hero` + `.hero-media` / `.page-hero-media` as on home / web-design / seo
+- Mobile/tablet may only tweak `object-position` / `transform-origin` for framing (laptop, phone, etc.)
