@@ -62,19 +62,18 @@
   }
   </script>
   <link rel="preconnect" href="https://media.cwd-cdn.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20261001c">
+  <link rel="stylesheet" href="styles.css?v=20261001d">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="./" aria-label="Collingwood Web Design home">
+      <a class="logo" href="./" aria-label="Collingwood webdesign home">
         <span class="logo-strong">COLLINGWOOD</span>
         <span class="logo-rest"><span class="logo-web">web</span><span class="logo-design">design</span></span>
       </a>
@@ -98,7 +97,9 @@
     <section class="hero" aria-label="Hero">
       <div class="hero-media">
         <img
-          src="https://media.cwd-cdn.com/C-W-D/images/hero.png"
+          src="https://media.cwd-cdn.com/C-W-D/images/opt/hero-1200.webp"
+          srcset="https://media.cwd-cdn.com/C-W-D/images/opt/hero-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/hero-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/hero-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/hero-1600.webp 1600w, https://media.cwd-cdn.com/C-W-D/images/opt/hero-1672.webp 1672w"
+          sizes="100vw"
           alt="Laptop keyboard with red backlighting"
           width="1920"
           height="1080"
@@ -546,7 +547,9 @@
               <div class="work-media">
                 <img
                   class="work-shot"
-                  src="https://media.cwd-cdn.com/C-W-D/images/featured-brown-china-letters.jpg"
+                  src="https://media.cwd-cdn.com/C-W-D/images/opt/featured-brown-china-letters-1200.webp"
+                  srcset="https://media.cwd-cdn.com/C-W-D/images/opt/featured-brown-china-letters-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-brown-china-letters-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-brown-china-letters-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-brown-china-letters-1231.webp 1231w"
+                  sizes="(max-width: 720px) 90vw, (max-width: 1200px) 55vw, 347px"
                   alt="Brown China Letters website"
                   width="1231"
                   height="988"
@@ -562,7 +565,9 @@
               <div class="work-media">
                 <img
                   class="work-shot"
-                  src="https://media.cwd-cdn.com/C-W-D/images/featured-tropisch.jpg"
+                  src="https://media.cwd-cdn.com/C-W-D/images/opt/featured-tropisch-1200.webp"
+                  srcset="https://media.cwd-cdn.com/C-W-D/images/opt/featured-tropisch-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-tropisch-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-tropisch-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-tropisch-1231.webp 1231w"
+                  sizes="(max-width: 720px) 90vw, (max-width: 1200px) 55vw, 417px"
                   alt="Tropisch Tours website"
                   width="1231"
                   height="988"
@@ -578,7 +583,9 @@
               <div class="work-media">
                 <img
                   class="work-shot"
-                  src="https://media.cwd-cdn.com/C-W-D/images/featured-the-sisters-zermatt.jpg"
+                  src="https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-1200.webp"
+                  srcset="https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-1231.webp 1231w"
+                  sizes="(max-width: 720px) 90vw, (max-width: 1200px) 55vw, 348px"
                   alt="The Sisters Zermatt website"
                   width="1231"
                   height="988"
@@ -661,7 +668,9 @@
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-bg">
-        <img src="https://media.cwd-cdn.com/C-W-D/images/contact-us-geek-creative.jpg" alt="" width="1800" height="1012" loading="lazy">
+        <img src="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp"
+          srcset="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1600.webp 1600w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1800.webp 1800w"
+          sizes="100vw" alt="" width="1800" height="1012" loading="lazy">
       </div>
       <div class="footer-grid">
         <div>
@@ -701,6 +710,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261001d"></script>
 </body>
 </html>

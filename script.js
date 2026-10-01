@@ -147,6 +147,30 @@
       window.setTimeout(() => banner.remove(), 320);
     });
   }
+  /* Load looping videos only when they near the screen */
+  const lazyVideos = document.querySelectorAll("video[data-src]");
+  if (lazyVideos.length) {
+    const startVideo = (video) => {
+      video.src = video.dataset.src;
+      video.removeAttribute("data-src");
+    };
+    if (!("IntersectionObserver" in window)) {
+      lazyVideos.forEach(startVideo);
+    } else {
+      const videoObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            startVideo(entry.target);
+            videoObserver.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "400px 0px" }
+      );
+      lazyVideos.forEach((video) => videoObserver.observe(video));
+    }
+  }
+
   /* Case study letter lightbox */
   const lightbox = document.getElementById("case-study-lightbox");
   const lightboxImg = lightbox?.querySelector(".case-study-lightbox-img");

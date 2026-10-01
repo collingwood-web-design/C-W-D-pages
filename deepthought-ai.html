@@ -26,13 +26,12 @@
     })();
   </script>
   <link rel="preconnect" href="https://media.cwd-cdn.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20261001a">
+  <link rel="stylesheet" href="styles.css?v=20261001d">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,7 +48,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="./" aria-label="Collingwood Web Design home">
+      <a class="logo" href="./" aria-label="Collingwood webdesign home">
         <span class="logo-strong">COLLINGWOOD</span>
         <span class="logo-rest"><span class="logo-web">web</span><span class="logo-design">design</span></span>
       </a>
@@ -88,7 +87,9 @@
             aria-label="Open portrait larger"
           >
             <img
-              src="https://media.cwd-cdn.com/C-W-D/images/ai-augmented-systems-architect.jpg"
+              src="https://media.cwd-cdn.com/C-W-D/images/opt/ai-augmented-systems-architect-1200.webp"
+              srcset="https://media.cwd-cdn.com/C-W-D/images/opt/ai-augmented-systems-architect-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/ai-augmented-systems-architect-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/ai-augmented-systems-architect-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/ai-augmented-systems-architect-1254.webp 1254w"
+              sizes="(max-width: 720px) 90vw, (max-width: 1200px) 55vw, 552px"
               alt="Aaron Brown, AI-Augmented Systems Architect"
               width="1254"
               height="1254"
@@ -357,7 +358,9 @@
           <p>Modern AI-augmented development relies on a combination of human expertise and powerful development tools.</p>
           <figure class="dtai-tools-media">
             <img
-              src="https://media.cwd-cdn.com/C-W-D/images/cursor-chat-gpt.png"
+              src="https://media.cwd-cdn.com/C-W-D/images/opt/cursor-chat-gpt-1200.webp"
+              srcset="https://media.cwd-cdn.com/C-W-D/images/opt/cursor-chat-gpt-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/cursor-chat-gpt-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/cursor-chat-gpt-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/cursor-chat-gpt-1600.webp 1600w, https://media.cwd-cdn.com/C-W-D/images/opt/cursor-chat-gpt-1774.webp 1774w"
+              sizes="(max-width: 720px) 90vw, (max-width: 1200px) 40vw, 336px"
               alt="Cursor and ChatGPT — tools used in AI-augmented development"
               width="1774"
               height="518"
@@ -401,7 +404,9 @@
 
   <footer class="site-footer">
     <div class="footer-top">
-      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/contact-us-geek-creative.jpg" alt="" width="1800" height="1012" loading="lazy"></div>
+      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp"
+          srcset="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1600.webp 1600w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1800.webp 1800w"
+          sizes="100vw" alt="" width="1800" height="1012" loading="lazy"></div>
       <div class="footer-grid">
         <div>
           <h2>Coffee? Let's chat!</h2>
@@ -434,6 +439,6 @@
     <img class="case-study-lightbox-img" src="" alt="">
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261001d"></script>
 </body>
 </html>

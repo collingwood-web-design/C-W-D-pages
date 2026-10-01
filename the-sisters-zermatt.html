@@ -26,13 +26,12 @@
     })();
   </script>
   <link rel="preconnect" href="https://media.cwd-cdn.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20261001a">
+  <link rel="stylesheet" href="styles.css?v=20261001d">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,7 +61,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="./" aria-label="Collingwood Web Design home">
+      <a class="logo" href="./" aria-label="Collingwood webdesign home">
         <span class="logo-strong">COLLINGWOOD</span>
         <span class="logo-rest"><span class="logo-web">web</span><span class="logo-design">design</span></span>
       </a>
@@ -83,7 +82,9 @@
   <main id="main" class="case-study-page">
     <section class="wd-featured-case case-study-page-hero" aria-labelledby="case-study-title">
       <div class="wd-featured-case-media" aria-hidden="true">
-        <img src="https://media.cwd-cdn.com/C-W-D/images/featured-the-sisters-zermatt.jpg" alt="" width="1231" height="988" fetchpriority="high" decoding="async">
+        <img src="https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-1200.webp"
+          srcset="https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/featured-the-sisters-zermatt-1231.webp 1231w"
+          sizes="100vw" alt="" width="1231" height="988" fetchpriority="high" decoding="async">
       </div>
       <div class="section-inner wd-featured-case-inner">
         <div class="wd-featured-case-copy">
@@ -99,7 +100,9 @@
         </p>
         <figure class="wd-featured-case-visual wd-featured-case-visual--lower">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/case-study-the-sisters-zermatt-greyscale.png"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/case-study-the-sisters-zermatt-greyscale-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/case-study-the-sisters-zermatt-greyscale-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/case-study-the-sisters-zermatt-greyscale-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/case-study-the-sisters-zermatt-greyscale-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/case-study-the-sisters-zermatt-greyscale-1375.webp 1375w"
+            sizes="(max-width: 720px) 90vw, (max-width: 1200px) 100vw, 610px"
             alt="The Sisters Zermatt website on desktop and phone"
             width="1600"
             height="1000"
@@ -167,7 +170,9 @@
           </div>
           <figure class="case-study-story-media">
             <img
-              src="https://media.cwd-cdn.com/C-W-D/images/the-sisters-2-hotels-2.jpg"
+              src="https://media.cwd-cdn.com/C-W-D/images/opt/the-sisters-2-hotels-2-1200.webp"
+              srcset="https://media.cwd-cdn.com/C-W-D/images/opt/the-sisters-2-hotels-2-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/the-sisters-2-hotels-2-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/the-sisters-2-hotels-2-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/the-sisters-2-hotels-2-1448.webp 1448w"
+              sizes="(max-width: 720px) 90vw, (max-width: 1200px) 45vw, 540px"
               alt="Hotel Chesa Valese and Hotel Daniela"
               width="1448"
               height="1086"
@@ -188,14 +193,14 @@
           </div>
           <figure class="case-study-result-media">
             <video
-              src="https://media.cwd-cdn.com/C-W-D/images/the-sisters-zermatt-loop.mp4"
+              data-src="https://media.cwd-cdn.com/C-W-D/images/the-sisters-zermatt-loop.mp4"
               width="1080"
               height="1080"
               autoplay
               muted
               loop
               playsinline
-              preload="metadata"
+              preload="none"
               aria-label="The Sisters Zermatt homepage animation"
             ></video>
             <figcaption>Alpine hospitality, online</figcaption>
@@ -212,7 +217,9 @@
 
   <footer class="site-footer">
     <div class="footer-top">
-      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/contact-us-geek-creative.jpg" alt="" width="1800" height="1012" loading="lazy"></div>
+      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp"
+          srcset="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1600.webp 1600w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1800.webp 1800w"
+          sizes="100vw" alt="" width="1800" height="1012" loading="lazy"></div>
       <div class="footer-grid">
         <div>
           <h2>Coffee? Let's chat!</h2>
@@ -238,6 +245,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261001d"></script>
 </body>
 </html>

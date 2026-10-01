@@ -26,13 +26,12 @@
     })();
   </script>
   <link rel="preconnect" href="https://media.cwd-cdn.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20261001a">
+  <link rel="stylesheet" href="styles.css?v=20261001d">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,7 +48,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="./" aria-label="Collingwood Web Design home">
+      <a class="logo" href="./" aria-label="Collingwood webdesign home">
         <span class="logo-strong">COLLINGWOOD</span>
         <span class="logo-rest"><span class="logo-web">web</span><span class="logo-design">design</span></span>
       </a>
@@ -73,12 +72,15 @@
         <picture>
           <source
             media="(max-width: 960px) and (orientation: portrait)"
-            srcset="https://media.cwd-cdn.com/C-W-D/images/cwd-graphics-hero-3-small.jpg"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-small-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-small-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-small-1080.webp 1080w"
+            sizes="100vw"
             width="1080"
             height="1350"
           >
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/cwd-graphics-hero-3.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/cwd-graphics-hero-3-1448.webp 1448w"
+            sizes="100vw"
             alt="Illustration of a woman with curly red hair sitting barefoot in a red spotlight"
             width="1448"
             height="1086"
@@ -171,7 +173,9 @@
       <div class="gfx-apps-grid">
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/tin-mug-tropisch-tours-travel.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/tin-mug-tropisch-tours-travel-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/tin-mug-tropisch-tours-travel-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/tin-mug-tropisch-tours-travel-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/tin-mug-tropisch-tours-travel-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/tin-mug-tropisch-tours-travel-1254.webp 1254w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Tropisch Tours &amp; Travel tin mug"
             width="1254"
             height="1254"
@@ -181,7 +185,9 @@
         </figure>
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/market-bag-four-winds.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/market-bag-four-winds-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/market-bag-four-winds-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/market-bag-four-winds-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/market-bag-four-winds-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/market-bag-four-winds-1254.webp 1254w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Four Winds Music Fest market bag"
             width="1254"
             height="1254"
@@ -191,7 +197,9 @@
         </figure>
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/cace-business-cards.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cace-business-cards-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cace-business-cards-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cace-business-cards-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cace-business-cards-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cace-business-cards-1254.webp 1254w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="CACE Group business cards"
             width="1254"
             height="1254"
@@ -201,7 +209,9 @@
         </figure>
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/mackenzie-signage.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/mackenzie-signage-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/mackenzie-signage-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/mackenzie-signage-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/mackenzie-signage-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/mackenzie-signage-1254.webp 1254w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Mackenzie River Engineering wall sign"
             width="1254"
             height="1254"
@@ -222,7 +232,9 @@
         </div>
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/intrepid-living-artwork.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/intrepid-living-artwork-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/intrepid-living-artwork-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/intrepid-living-artwork-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/intrepid-living-artwork-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/intrepid-living-artwork-1254.webp 1254w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Intrepid Living custom artwork"
             width="1254"
             height="1254"
@@ -232,7 +244,9 @@
         </figure>
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/cwd-watercolour.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cwd-watercolour-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cwd-watercolour-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cwd-watercolour-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cwd-watercolour-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/cwd-watercolour-1254.webp 1254w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Watercolour custom artwork"
             width="1254"
             height="1254"
@@ -272,7 +286,9 @@
         </figure>
         <figure class="gfx-apps-tile gfx-apps-tile--span2">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/bandB-backside-fit.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/bandB-backside-fit-1200.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/bandB-backside-fit-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/bandB-backside-fit-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/bandB-backside-fit-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/bandB-backside-fit-1600.webp 1600w"
+            sizes="(max-width: 720px) 100vw, (max-width: 1200px) 55vw, 713px"
             alt="Beaver and Bulldog custom artwork"
             width="1600"
             height="800"
@@ -293,7 +309,9 @@
         </div>
         <figure class="gfx-apps-tile gfx-apps-tile--banner">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/four-winds-poster.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-1186.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-1186.webp 1186w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Four Winds Music Fest street banner"
             width="1186"
             height="1326"
@@ -303,7 +321,9 @@
         </figure>
         <figure class="gfx-apps-tile gfx-apps-tile--banner gfx-apps-tile--poster-fit">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/four-winds-poster-2025-wall.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-2025-wall-1086.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-2025-wall-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-2025-wall-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/four-winds-poster-2025-wall-1086.webp 1086w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Four Winds Music Fest 2025 wall poster"
             width="1086"
             height="1448"
@@ -313,7 +333,9 @@
         </figure>
         <figure class="gfx-apps-tile">
           <img
-            src="https://media.cwd-cdn.com/C-W-D/images/graphics/skye-on-a-wall.jpg"
+            src="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/skye-on-a-wall-1086.webp"
+            srcset="https://media.cwd-cdn.com/C-W-D/images/opt/graphics/skye-on-a-wall-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/skye-on-a-wall-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/graphics/skye-on-a-wall-1086.webp 1086w"
+            sizes="(max-width: 720px) 55vw, (max-width: 1200px) 25vw, 356px"
             alt="Skye wall mural"
             width="1086"
             height="1448"
@@ -465,7 +487,9 @@
 
   <footer class="site-footer">
     <div class="footer-top">
-      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/contact-us-geek-creative.jpg" alt="" width="1800" height="1012" loading="lazy"></div>
+      <div class="footer-bg"><img src="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp"
+          srcset="https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-480.webp 480w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-800.webp 800w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1200.webp 1200w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1600.webp 1600w, https://media.cwd-cdn.com/C-W-D/images/opt/contact-us-geek-creative-1800.webp 1800w"
+          sizes="100vw" alt="" width="1800" height="1012" loading="lazy"></div>
       <div class="footer-grid">
         <div>
           <h2>Coffee? Let's chat!</h2>
@@ -490,6 +514,6 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261001d"></script>
 </body>
 </html>

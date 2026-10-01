@@ -1,4 +1,80 @@
 /* Collingwood Web Design — site styles */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/lato-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/lato-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/lato-900.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Arial resized to Lato's metrics so text doesn't reflow when Lato arrives */
+@font-face {
+  font-family: "Lato Fallback";
+  font-weight: 400;
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 97.56%;
+  ascent-override: 101.17%;
+  descent-override: 21.83%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Lato Fallback";
+  font-weight: 700;
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  size-adjust: 93.46%;
+  ascent-override: 105.61%;
+  descent-override: 22.79%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Lato Fallback";
+  font-weight: 900;
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  size-adjust: 95.15%;
+  ascent-override: 103.73%;
+  descent-override: 22.39%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/caveat-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/caveat-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --red: #c4121a;
   --red-deep: #9a1016;
@@ -10,9 +86,9 @@
   --fog: #f5f5f5;
   --max: 72rem;
   --header-h: 4.25rem;
-  --font-display: "Lato", sans-serif;
-  --font-body: "Lato", sans-serif;
-  --font-logo: "Lato", sans-serif;
+  --font-display: "Lato", "Lato Fallback", sans-serif;
+  --font-body: "Lato", "Lato Fallback", sans-serif;
+  --font-logo: "Lato", "Lato Fallback", sans-serif;
   --font-script: "Caveat", cursive;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --hero-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -2288,6 +2364,7 @@ a.service-more .service-more-arrow {
   letter-spacing: 0.14em;
   font-size: 0.72rem;
   font-weight: 700;
+  color: #ff5a5f;
 }
 
 .gfx-apps-intro h2 {
@@ -2512,6 +2589,7 @@ a.service-more .service-more-arrow {
 
 .gfx-format .gfx-art-intro .eyebrow {
   margin: 0 0 0.85rem;
+  color: #ff5a5f;
 }
 
 .gfx-format .gfx-art-intro .section-title {
