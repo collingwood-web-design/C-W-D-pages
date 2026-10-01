@@ -32,7 +32,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20261001a">
+  <link rel="stylesheet" href="styles.css?v=20261001b">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -125,6 +125,20 @@
               <p data-cwd-contact-status role="status" aria-live="polite"></p>
             </div>
           </form>
+
+          <dialog id="contact-thanks" class="contact-thanks" aria-labelledby="contact-thanks-title">
+            <button type="button" class="contact-thanks-x" data-close-thanks aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <span class="contact-thanks-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p class="eyebrow">Message sent</p>
+            <h2 id="contact-thanks-title">Thanks, we’ve got it.</h2>
+            <p class="contact-thanks-text">Your message is on its way to us. We’ll get back to you shortly.</p>
+            <p class="contact-thanks-sign">John &amp; Judy</p>
+            <button type="button" class="btn btn-fill-red" data-close-thanks>Close</button>
+          </dialog>
         </div>
 
         <figure class="contact-photo">

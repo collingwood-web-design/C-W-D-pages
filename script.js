@@ -163,6 +163,26 @@
     });
   }
 
+  /* Contact form thank-you pop-up */
+  const contactForm = document.getElementById("contact-form");
+  const contactThanks = document.getElementById("contact-thanks");
+  if (contactForm && contactThanks) {
+    contactForm.addEventListener("cwd-contact:success", () => {
+      const status = contactForm.querySelector("[data-cwd-contact-status]");
+      if (status) status.textContent = "";
+      contactThanks.showModal();
+    });
+    contactThanks.querySelectorAll("[data-close-thanks]").forEach((btn) => {
+      btn.addEventListener("click", () => contactThanks.close());
+    });
+    contactThanks.addEventListener("click", (event) => {
+      if (event.target !== contactThanks) return;
+      const r = contactThanks.getBoundingClientRect();
+      const inside = event.clientX >= r.left && event.clientX <= r.right && event.clientY >= r.top && event.clientY <= r.bottom;
+      if (!inside) contactThanks.close();
+    });
+  }
+
   /* Pulsing tip / note panels */
   const closePulseTip = (tip) => {
     const btn = tip.querySelector(".wd-pulse-tip__btn");
