@@ -166,6 +166,33 @@
   /* Contact form thank-you pop-up */
   const contactForm = document.getElementById("contact-form");
   const contactThanks = document.getElementById("contact-thanks");
+  /* The form server strips anything link-like, so send the website as a bare, unclickable domain (example[.]com) */
+  const websiteField = contactForm?.querySelector('[name="Website URL"]');
+  if (websiteField) {
+    const toPlainDomain = (raw) =>
+      raw
+        .trim()
+        .replace(/^[a-z][a-z0-9+.-]*:\/\//i, "")
+        .split(/[/?#\s]/)[0]
+        .replace(/:\d+$/, "")
+        .replace(/^www\./i, "")
+        .toLowerCase()
+        .replace(/\./g, "[.]");
+
+    document.addEventListener(
+      "submit",
+      (event) => {
+        if (event.target !== contactForm) return;
+        const typed = websiteField.value;
+        websiteField.value = toPlainDomain(typed);
+        window.setTimeout(() => {
+          if (websiteField.value) websiteField.value = typed;
+        }, 0);
+      },
+      true
+    );
+  }
+
   if (contactForm && contactThanks) {
     contactForm.addEventListener("cwd-contact:success", () => {
       const status = contactForm.querySelector("[data-cwd-contact-status]");
