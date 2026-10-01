@@ -6336,16 +6336,27 @@ h1.contact-aside-title {
 /* Cookie banner */
 .cookie-banner {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 1.5rem;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
   z-index: 1000;
-  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom, 0px));
-  background: var(--black);
-  color: #fff;
-  border-top: 2px solid var(--red);
-  transform: translateY(110%);
+  width: min(25rem, calc(100% - 3rem));
+  padding: 1.25rem 1.35rem;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(calc(100% + 3rem));
   transition: transform 0.35s var(--ease);
+}
+
+@media (max-width: 720px) {
+  .cookie-banner {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    width: auto;
+  }
 }
 
 /* Back to top — flush right */
@@ -6439,16 +6450,15 @@ h1.contact-aside-title {
   flex: 1 1 16rem;
   font-size: 0.95rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.88);
+  color: #3a3a3a;
 }
 
 .cookie-banner a {
-  color: #fff;
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 0.18em;
   font-weight: 700;
 }
-
 .cookie-banner a:hover {
   color: var(--red);
 }
