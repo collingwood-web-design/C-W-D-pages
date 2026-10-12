@@ -147,6 +147,136 @@
       window.setTimeout(() => banner.remove(), 320);
     });
   }
+  /* Drifting node network over the hero image (SEO page) */
+  const heroNet = document.querySelector(".hero-net");
+  if (heroNet && !reduceMotion) {
+    const ctx = heroNet.getContext("2d");
+    const MAX_DIST = 160;
+    let w = 0;
+    let h = 0;
+    let nodes = [];
+    let running = false;
+    let frame = 0;
+
+    const makeNode = () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      phase: Math.random() * Math.PI * 2,
+    });
+
+    /* Resizes keep existing nodes (scaled) so the mobile address bar doesn't reshuffle them */
+    const setup = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const rect = heroNet.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const sx = w ? rect.width / w : 1;
+      const sy = h ? rect.height / h : 1;
+      w = rect.width;
+      h = rect.height;
+      heroNet.width = Math.round(w * dpr);
+      heroNet.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      nodes.forEach((a) => {
+        a.x *= sx;
+        a.y *= sy;
+      });
+      const count = Math.round(Math.min(70, Math.max(20, (w * h) / 21000)));
+      while (nodes.length < count) nodes.push(makeNode());
+      nodes.length = count;
+    };
+
+    const draw = (now = 0) => {
+      const t = now / 1000;
+      const n = nodes.length;
+      const near = [];
+      const edges = [];
+
+      ctx.clearRect(0, 0, w, h);
+
+      for (let i = 0; i < n; i++) {
+        const a = nodes[i];
+        a.x += a.vx;
+        a.y += a.vy;
+        if (a.x < 0 || a.x > w) a.vx *= -1;
+        if (a.y < 0 || a.y > h) a.vy *= -1;
+        near[i] = {};
+      }
+
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const dist = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
+          if (dist < MAX_DIST) {
+            near[i][j] = dist;
+            edges.push([i, j, dist]);
+          }
+        }
+      }
+
+      for (const [i, j, d] of edges) {
+        for (let k = j + 1; k < n; k++) {
+          if (near[i][k] === undefined || near[j][k] === undefined) continue;
+          const closeness = 1 - (d + near[i][k] + near[j][k]) / (3 * MAX_DIST);
+          ctx.fillStyle = `rgba(230, 60, 40, ${(0.07 * closeness).toFixed(3)})`;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.lineTo(nodes[k].x, nodes[k].y);
+          ctx.closePath();
+          ctx.fill();
+        }
+      }
+
+      ctx.lineWidth = 1;
+      for (const [i, j, d] of edges) {
+        ctx.strokeStyle = `rgba(255, 145, 115, ${(0.45 * (1 - d / MAX_DIST)).toFixed(3)})`;
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.stroke();
+      }
+
+      for (const a of nodes) {
+        const pulse = 0.5 + 0.5 * Math.sin(t * 1.6 + a.phase);
+        ctx.fillStyle = `rgba(255, 150, 120, ${(0.2 * pulse).toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(a.x, a.y, 2 + pulse * 2.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "rgba(255, 225, 210, 0.9)";
+        ctx.beginPath();
+        ctx.arc(a.x, a.y, 1.4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (running) frame = requestAnimationFrame(draw);
+    };
+
+    const start = () => {
+      setup();
+      heroNet.classList.add("is-running");
+      if ("ResizeObserver" in window) new ResizeObserver(setup).observe(heroNet);
+      else window.addEventListener("resize", setup);
+      const play = (visible) => {
+        if (visible && !running) {
+          running = true;
+          frame = requestAnimationFrame(draw);
+        } else if (!visible && running) {
+          running = false;
+          cancelAnimationFrame(frame);
+        }
+      };
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver((entries) => play(entries[0].isIntersecting)).observe(heroNet);
+      } else {
+        play(true);
+      }
+    };
+
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+  }
+
   /* Load looping videos only when they near the screen */
   const lazyVideos = document.querySelectorAll("video[data-src]");
   if (lazyVideos.length) {
