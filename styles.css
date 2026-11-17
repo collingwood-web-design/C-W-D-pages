@@ -1499,7 +1499,9 @@ a.service-more .service-more-arrow {
 }
 
 .services-banner {
-  margin-top: 2rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
   background: var(--red);
   color: #fff;
   text-align: center;
