@@ -379,21 +379,49 @@ ul {
   isolation: isolate;
 }
 
-/* Home: everything below the hero slides up and covers it */
-.home-page .hero {
+/* Sticky hero: everything below slides up and covers it */
+.has-sticky-hero .hero {
   position: sticky;
   top: var(--header-h);
   z-index: 1;
 }
 
-.home-page #main > *:not(.hero),
-.home-page .site-footer {
+.has-sticky-hero #main > *:not(.hero),
+.has-sticky-hero .site-footer {
   position: relative;
   z-index: 2;
 }
 
-.home-page .impact-dial {
+.has-sticky-hero .impact-dial {
   box-shadow: 0 -18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.has-sticky-hero #main > .wd-selected,
+.has-sticky-hero #main > .gfx-logos {
+  box-shadow: 0 -14px 36px rgba(0, 0, 0, 0.28);
+}
+
+/*
+  Featured case device mockups hang into the next section. Sticky-hero
+  stacking (z-index: 2 on all main children) was covering them — lift the
+  band above, keep original margins, and paint an opaque fill in the gap
+  so the stuck page hero cannot show through.
+*/
+.has-sticky-hero #main > .wd-featured-case {
+  z-index: 3;
+  box-shadow: 0 2.75rem 0 0 #fff;
+}
+
+.has-sticky-hero #main > .wd-featured-case:has(.wd-featured-case-visual--lower) {
+  box-shadow: 0 4.25rem 0 0 #fff;
+}
+
+.has-sticky-hero #main > .wd-featured-case:has(+ .wd-process) {
+  box-shadow: 0 2.75rem 0 0 var(--fog);
+}
+
+.has-sticky-hero #main > .wd-featured-case:has(.wd-featured-case-visual--lower):has(+ .wd-process) {
+  box-shadow: 0 4.25rem 0 0 var(--fog);
 }
 
 .hero-media {
