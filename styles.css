@@ -401,6 +401,11 @@ ul {
   box-shadow: 0 -14px 36px rgba(0, 0, 0, 0.28);
 }
 
+/* Keep open tip panels above hanging case-study mockups + the next band */
+.has-sticky-hero #main > .wd-selected:has(.wd-pulse-tip__btn[aria-expanded="true"]) {
+  z-index: 4;
+}
+
 /*
   Featured case device mockups hang into the next section. Sticky-hero
   stacking (z-index: 2 on all main children) was covering them — lift the
@@ -3438,6 +3443,14 @@ a.service-more .service-more-arrow {
   border: 7px solid transparent;
   border-top-color: var(--paper);
   filter: drop-shadow(0 1px 0 var(--line));
+}
+
+.wd-pulse-tip__panel[data-placement="below"]::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--paper);
+  filter: drop-shadow(0 -1px 0 var(--line));
 }
 
 .wd-pulse-tip__panel p {

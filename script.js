@@ -364,28 +364,90 @@
     });
   }
 
-  /* Pulsing tip / note panels */
+  /* Pulsing tip / note panels — fixed so hanging case studies cannot cover them */
+  const placePulseTip = (btn, panel, preferBelow) => {
+    const gap = 14;
+    const margin = 16;
+    const rect = btn.getBoundingClientRect();
+    panel.style.position = "fixed";
+    panel.style.left = "0";
+    panel.style.right = "auto";
+    panel.style.bottom = "auto";
+    panel.style.transform = "none";
+    panel.style.zIndex = "1000";
+    panel.hidden = false;
+
+    const width = Math.min(panel.offsetWidth || 336, window.innerWidth - margin * 2);
+    panel.style.width = `${width}px`;
+
+    let left = rect.left + rect.width / 2 - width / 2;
+    left = Math.max(margin, Math.min(left, window.innerWidth - width - margin));
+
+    const height = panel.offsetHeight;
+    const spaceAbove = rect.top - margin;
+    const spaceBelow = window.innerHeight - rect.bottom - margin;
+    const openBelow =
+      preferBelow ||
+      spaceAbove < height + gap ||
+      (spaceBelow >= height + gap && spaceBelow > spaceAbove);
+
+    let top = openBelow ? rect.bottom + gap : rect.top - height - gap;
+    top = Math.max(margin, Math.min(top, window.innerHeight - height - margin));
+
+    panel.style.left = `${left}px`;
+    panel.style.top = `${top}px`;
+    panel.dataset.placement = openBelow ? "below" : "above";
+  };
+
   const closePulseTip = (tip) => {
     const btn = tip.querySelector(".wd-pulse-tip__btn");
     const panel = tip.querySelector(".wd-pulse-tip__panel");
     if (!btn || !panel) return;
     btn.setAttribute("aria-expanded", "false");
     panel.hidden = true;
+    panel.removeAttribute("data-placement");
+    panel.style.position = "";
+    panel.style.left = "";
+    panel.style.right = "";
+    panel.style.top = "";
+    panel.style.bottom = "";
+    panel.style.transform = "";
+    panel.style.width = "";
+    panel.style.zIndex = "";
+  };
+
+  const openPulseTip = (tip) => {
+    const btn = tip.querySelector(".wd-pulse-tip__btn");
+    const panel = tip.querySelector(".wd-pulse-tip__panel");
+    if (!btn || !panel) return;
+    document.querySelectorAll(".wd-pulse-tip").forEach((other) => {
+      if (other !== tip) closePulseTip(other);
+    });
+    btn.setAttribute("aria-expanded", "true");
+    placePulseTip(btn, panel, tip.classList.contains("wd-pulse-tip--below"));
   };
 
   document.querySelectorAll(".wd-pulse-tip").forEach((tip) => {
     const btn = tip.querySelector(".wd-pulse-tip__btn");
     const panel = tip.querySelector(".wd-pulse-tip__panel");
     if (!btn || !panel) return;
+    let hoverTimer = 0;
 
     btn.addEventListener("click", (event) => {
+      event.preventDefault();
       event.stopPropagation();
       const open = btn.getAttribute("aria-expanded") === "true";
-      document.querySelectorAll(".wd-pulse-tip").forEach((other) => {
-        if (other !== tip) closePulseTip(other);
-      });
-      btn.setAttribute("aria-expanded", open ? "false" : "true");
-      panel.hidden = open;
+      if (open) closePulseTip(tip);
+      else openPulseTip(tip);
+    });
+
+    tip.addEventListener("mouseenter", () => {
+      window.clearTimeout(hoverTimer);
+      openPulseTip(tip);
+    });
+
+    tip.addEventListener("mouseleave", () => {
+      hoverTimer = window.setTimeout(() => closePulseTip(tip), 160);
     });
   });
 
@@ -398,4 +460,17 @@
     if (event.key !== "Escape") return;
     document.querySelectorAll(".wd-pulse-tip").forEach(closePulseTip);
   });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      document.querySelectorAll(".wd-pulse-tip").forEach((tip) => {
+        const btn = tip.querySelector(".wd-pulse-tip__btn");
+        const panel = tip.querySelector(".wd-pulse-tip__panel");
+        if (!btn || !panel || panel.hidden) return;
+        placePulseTip(btn, panel, tip.classList.contains("wd-pulse-tip--below"));
+      });
+    },
+    { passive: true }
+  );
 })();
