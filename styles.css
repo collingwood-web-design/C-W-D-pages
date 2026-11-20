@@ -7574,6 +7574,10 @@ h1.contact-aside-title {
   line-height: 1.35;
 }
 
+.impact-dial__lede-accent {
+  color: var(--red);
+}
+
 .impact-dial__cta {
   position: absolute;
   left: 50%;
