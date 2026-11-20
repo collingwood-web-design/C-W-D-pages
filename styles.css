@@ -7406,7 +7406,7 @@ h1.contact-aside-title {
 .impact-dial {
   position: relative;
   background:
-    radial-gradient(ellipse 52% 68% at 76% 48%, rgba(196, 18, 26, 0.22), transparent 58%),
+    radial-gradient(ellipse 52% 68% at 76% 48%, rgba(196, 18, 26, 0.16), transparent 58%),
     radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.78) 100%),
     #050505;
   color: #fff;
@@ -7414,7 +7414,31 @@ h1.contact-aside-title {
   isolation: isolate;
 }
 
+.impact-dial__globe {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.impact-dial__globe img {
+  position: absolute;
+  left: -10%;
+  top: -42%;
+  bottom: auto;
+  transform: none;
+  width: min(160vw, 100rem);
+  height: auto;
+  max-width: none;
+  opacity: 0.92;
+  mix-blend-mode: normal;
+  filter: none;
+}
+
 .impact-dial__frame {
+  position: relative;
+  z-index: 1;
   max-width: 78rem;
   margin: 0 auto;
   padding: clamp(3.25rem, 8vw, 5.75rem) clamp(1.25rem, 4vw, 2.5rem);
@@ -7703,6 +7727,14 @@ h1.contact-aside-title {
   .impact-dial__stage {
     width: min(100%, 28rem);
     margin: 0 auto;
+  }
+
+  .impact-dial__globe img {
+    left: 40%;
+    top: -28%;
+    transform: translateX(-50%);
+    width: min(195vw, 64rem);
+    opacity: 0.78;
   }
 }
 
