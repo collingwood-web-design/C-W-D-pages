@@ -2293,11 +2293,93 @@ a.service-more .service-more-arrow {
   background: #58595b;
 }
 
-.gfx-logo-tile--mackenzie {
-  background: #37433b;
+.gfx-logo-tile--a4 {
+  background: #0f1c1d;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 4vw, 2rem);
 }
 
-.gfx-logo-tile img {
+.gfx-a4-boot {
+  width: min(72%, 280px);
+  text-align: center;
+  transition: transform 0.45s var(--ease);
+}
+
+.gfx-a4-boot__logo {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+  margin: 0 auto 1.35rem;
+  object-fit: contain;
+  opacity: 1;
+  transform: none;
+}
+
+.gfx-a4-boot__bar {
+  height: 2px;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.gfx-a4-boot__bar span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #1a5f62, #227a7e 55%, #7ec8cb);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: gfx-a4-boot-bar 7.2s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+}
+
+.gfx-a4-boot__tagline {
+  margin: 1.1rem 0 0;
+  color: #7ec8cb;
+  font-family: inherit;
+  font-size: clamp(0.62rem, 1.6vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: gfx-a4-boot-tagline 7.2s var(--ease) infinite;
+}
+
+/* Draw 0→45%; tagline in at ~half draw (~22%); hold; snap off with bar */
+@keyframes gfx-a4-boot-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  45% {
+    transform: scaleX(1);
+  }
+  78% {
+    transform: scaleX(1);
+  }
+  78.01%,
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes gfx-a4-boot-tagline {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  28%,
+  78% {
+    opacity: 1;
+  }
+  78.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.gfx-logo-tile img,
+.gfx-logo-tile__svg {
   display: block;
   width: 100%;
   height: 100%;
@@ -2310,8 +2392,18 @@ a.service-more .service-more-arrow {
   will-change: transform;
 }
 
-.gfx-logo-tile img.is-loaded {
+.gfx-logo-tile img.is-loaded,
+.gfx-logo-tile__svg.is-loaded {
   opacity: 1;
+}
+
+.gfx-logo-tile--a4 .gfx-a4-boot__logo,
+.gfx-logo-tile--a4 .gfx-a4-boot__logo.is-loaded {
+  width: min(220px, 100%);
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  transform: none;
 }
 
 @media (hover: hover) {
@@ -2319,7 +2411,8 @@ a.service-more .service-more-arrow {
     z-index: 2;
   }
 
-  .gfx-logo-tile:hover img {
+  .gfx-logo-tile:hover img,
+  .gfx-logo-tile:hover .gfx-logo-tile__svg {
     transform: scale(1.25);
   }
 
@@ -2329,6 +2422,26 @@ a.service-more .service-more-arrow {
 
   .gfx-logo-tile--beaver:hover img {
     transform: scale(1.05);
+  }
+
+  .gfx-logo-tile--a4:hover .gfx-a4-boot {
+    transform: scale(1.04);
+  }
+
+  .gfx-logo-tile--a4:hover .gfx-a4-boot__logo {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gfx-a4-boot__bar span {
+    animation: none;
+    transform: scaleX(1);
+  }
+
+  .gfx-a4-boot__tagline {
+    animation: none;
+    opacity: 1;
   }
 }
 
@@ -2371,7 +2484,7 @@ a.service-more .service-more-arrow {
 @media (min-width: 641px) and (max-width: 960px) and (orientation: portrait) {
   .gfx-logo-grid .gfx-logo-tile:nth-child(1) { order: 1; }
   .gfx-logo-grid .gfx-logo-tile:nth-child(2) { order: 2; }
-  .gfx-logo-grid .gfx-logo-tile:nth-child(3) { order: 6; } /* Mackenzie ↔ CACE */
+  .gfx-logo-grid .gfx-logo-tile:nth-child(3) { order: 6; } /* A4 ↔ CACE */
   .gfx-logo-grid .gfx-logo-tile:nth-child(4) { order: 5; } /* Ski → after Four Winds */
   .gfx-logo-grid .gfx-logo-tile:nth-child(5) { order: 4; } /* Four Winds → Ski slot */
   .gfx-logo-grid .gfx-logo-tile:nth-child(6) { order: 3; }
